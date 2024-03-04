@@ -1,0 +1,24 @@
+# latex/pdflatex
+*.aux
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.pdf
+*.toc
+
+# bibtex
+*.bbl
+*.blg
+
+# build tools
+*.fdb_latexmk
+*.synctex.gz
+*.synctex.gz(busy)
+
+# beamer
+*.nav
+*.pre
+*.snm
+*.vrb
