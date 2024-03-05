@@ -1,149 +1,41 @@
 \documentclass{uofsthesis-cs}
-% Documentation for the uofsthesis-cs class is given in uofsthesis-cs.dvi
-% 
-% It is recommended that you read the CGSR thesis preparation
-% guidelines before proceeding.
-% They can be found at http://www.usask.ca/cgsr/thesis/index.htm
+\input{preamble}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% FRONTMATTER - In this section, specify information to be used to
-% typeset the thesis frontmatter.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% THESIS TITLE
-% Specify the title. Set the capitalization how you want it.
 \title{Braid groups and Baxter polynomials}
-% AUTHOR'S NAME
-% Your name goes here.
 \author{Noah Friesen}
-
-% DEGREE SOUGHT.  
-% Use \MSc or \PhD here
 \degree{\MSc}
-
-% THESIS DEFENCE DATE
-% Should be month year, e.g. July 2004
 \defencedate{July 2024}
-
-
-% NAME OF ACADEMIC UNIT
-%
-% The following two commands allow you to specify the academic unit you belong to.
-% This will appear on the title page as
-% ``<academic unit> of <department>''.
-% So if you are in the division of biomedical engineering you would need to do:
-% \department{Biomedical Engineering}
-% \academicunit{Division}
-%
-% The default is ``Department of Computer Science'' if these commands
-% are not given.
-%
-% If you are in a discipline other than Computer Science, uncomment the following line and
-% specify your discipline/department.  Default is 'Computer Science'.
 \department{Mathematics and Statistics}
 
-% If you are not in a department, but say, a division, uncomment the following line.
-% \academicunit{Put the type of academic unit you belong to here, e.g. Division, College}
-
-
-% PERMISSION TO USE ADDRESS
-%
-% If you are not in Comptuer Science you will want to change the
-% address on the Permission to Use page.  This is done using
-% \ptuaddress{}.
-%
 \ptuaddress{Head of the Department of Mathematics and Statistics\\
 University of Saskatchewan\\
 142 McLean Hall, 106 Wiggins Road\\
 Saskatoon, Saskatchewan S7N 5E6 Canada
 }
 
-% ABSTRACT
 \abstract{
-This is the abstract of my thesis.  
+This is the abstract.  
 }
 
-% THESIS ACKNOWLEDGEMENTS -- This can be free-form.
-% \acknowledgements{
-% Acknowledgements go here.  Typically you would at least thank your supervisor.
-% }
+\acknowledgements{
+These are the acknowledgements.
+}
 
-% THESIS DEDICATION -- Also free-form.  If you don't want a dedication, comment
-% out the following line.
-% \dedication{This is the thesis dedication (optional)}
-
-% LIST OF ABBREVIATIONS - Sample  
-% If you don't want a list of abbreviations, comment the following 4 lines.
-% \loa{
-% \abbrev{SCUBA}{Self Contained Underwater Breathing Apparatus\hfill}
-% \abbrev{LOF}{List of Figures}
-% \abbrev{LOT}{List of Tables}
-% }
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% END OF FRONTMATTER SECTION
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-% Typeset the title page
+
 \maketitle
-
-% Typeset the frontmatter.  
 \frontmatter
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% CHAPTERS (or \input's)  GO HERE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{chapters/1-introduction}
 \input{chapters/2-yangians}
 \input{chapters/3-braidgroup}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% The Bibliograpy should go here. BEFORE appendices!
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-% Typeset the Bibliography.  The bibliography style used is "plain".
-% Optionally, you can specify the bibliography style to use:
-% \uofsbibliography[stylename]{yourbibfile}
-
 % \uofsbibliography{refs}
 
-% If you are not using bibtex, comment the line above and uncomment
-% the line below.  
-% Follow the line below with a thebibliography environment and bibitems.  
-% Note: use of bibtex is usually the preferred method.
-
-%\uofsbibliographynobibtex
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% APPENDICES
-%
-% Any chapters appearing after the \appendix command get numbered with
-% capital letters starting with appendix 'A'.
-% New chapters from here on will be called 'Appendix A', 'Appendix B'
-% as opposed to 'Chapter 1', 'Chapter 2', etc.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Activate thesis appendix mode.
 % \uofsappendix
-
-% Put appendix chapters in the appendices environment so that they appear correcty
-% in the table of contents.  You can use \input's here as well.
 % \begin{appendices}
-
-% \chapter{Sample Appendix}
-
-% Stuff for this appendix goes here.
-
-% \chapter{Another Sample Appendix}
-
-% Stuff for this appendix goes here.
-
+%     \input{chapters/appendix}
 % \end{appendices}
 
 \end{document}

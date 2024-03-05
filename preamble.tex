@@ -1,0 +1,49 @@
+% main packages
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage[shortlabels]{enumitem}
+
+% fonts
+\usepackage{mathrsfs}
+\usepackage[scr=boondoxo]{mathalpha}
+\usepackage{upgreek}
+
+% theorem environments
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+% numbers
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+
+% Lie algebras
+\newcommand{\g}{\mathfrak{g}}
+\newcommand{\h}{\mathfrak{h}}
+\newcommand{\mfsl}{\mathfrak{sl}}
+\newcommand{\Yhg}[1][]{Y_\hbar^{#1}(\g)}
+\newcommand{\ul}{\underline{\lambda}}
+\newcommand{\I}{\mathbf{I}}
+\newcommand{\Bg}{\mathscr{B}_\g}
+\newcommand{\Wg}{\mathscr{W}_\g}
+
+% operators
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\gr}{gr}
+
+% delimiters
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\db}{[\![}{]\!]}
