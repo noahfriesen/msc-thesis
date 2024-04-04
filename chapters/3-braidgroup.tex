@@ -24,7 +24,7 @@ As mentioned above, there is an action of the braid group on integrable represen
     A representation $(V,\phi)$ of $\g$ is \emph{integrable} if the following two conditions hold:
     \begin{enumerate}
         \item $V$ is a direct sum of weight spaces $V_\mu$ where $\mu(h_i)\in\Z$ for all $i\in\I$,
-        \item $\phi(e_i)$ and $\phi(f_i)$ are \emph{locally nilpotent} endomorphisms of $V$: for each $v\in V$ there exists a finite-dimensional subspace $W$ of $V$ such that $v\in W$, $W$ is invariant under $\phi(e_i)$ and $\phi(f_i)$, and the restrictions of $\phi(e_i)$ and $\phi(f_i)$ to $W$ are nilpotent.
+        \item $\phi(e_i)$ and $\phi(f_i)$ are \emph{locally nilpotent} endomorphisms of $V$ for all $i\in\I$: for each $v\in V$ there exists some $n\in\N$ such that $\phi(e_i)^n(v)=\phi(f_i)^n(v)=0$.
     \end{enumerate}
 \end{definition}
 
@@ -62,7 +62,7 @@ The following proposition shows that the braid group action on $V$ intertwines t
 The following proposition shows another important property of these braid group operators.
 
 \begin{proposition}\label{P:tau-tensor}
-    If $(V,\phi_V)$ and $(W,\phi_W)$ are both integral representations of $\g$, then $\braid_i^{V\otimes W} = \braid_i^V\otimes\braid_i^W$ for all $i\in\I$.
+    If $(V,\phi_V)$ and $(W,\phi_W)$ are both integrable representations of $\g$, then $\braid_i^{V\otimes W} = \braid_i^V\otimes\braid_i^W$ for all $i\in\I$.
 \end{proposition}
 \begin{proof}
     Let $\phi=\phi_V\otimes\phi_W$, so for all $x\in\g$ we have
@@ -123,7 +123,7 @@ For simplicity, we will denote by $\braid_i$ the algebra automorphisms $\braid_i
     \begin{equation}\label{eqn:TaTb}
         \braid_i(a)\braid_i(b) = a_0b_0 + a_0b_+ + a_+b_0 + a_+b_+.
     \end{equation}
-    Immediately, we see that applying $\varepsilon$ to the above will map the second and fourth terms of the right-hand side to zero, since they have raising operators on the right.
+    Immediately, we see that applying $\varepsilon^+$ to the above will map the second and fourth terms of the right-hand side to zero, since they have raising operators on the right.
     Using the defining relations of the Yangian will allow us to write the third term of the right-hand side above as an element of $\Yhg[0]\otimes\Yhg[+]$ as well: recall that
     \[[\xi_{i,r+1},x^+_{j,s}]-[\xi_{i,r},x^+_{j,s+1}]-\hbar\frac{d_ia_{ij}}{2}(\xi_{i,r}x^+_{j,s}+x^+_{j,s}\xi_{i,r})\]
     for all $i,j\in\I$ and $r,s\in\N$.
