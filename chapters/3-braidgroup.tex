@@ -90,7 +90,7 @@ The following proposition shows another important property of these braid group 
 This corollary is especially useful because the Yangian is such an associative algebra $A$.
 
 
-\section{Modified braid group operators}
+\section{Modified braid group operators}\label{sec:mbraid}
 
 In this section, we will define an action of the braid group on the Cartan part $\Yhg[0]$ of the Yangian by modifying the operators defined in the previous section.
 
@@ -111,7 +111,7 @@ For simplicity, we will denote by $\braid_i$ the algebra automorphisms $\braid_i
     Each $\mbraid_i$ is an algebra endomorphism of $\Yhg[0]$.
 \end{lemma}
 \begin{proof}
-    Let $\Yhg_0$ be the zero-weight space of $\Yhg$ as a representation of $\g$.
+    Let $\Yhg_0$ be the zero weight space of $\Yhg$ as a representation of $\g$.
     Elements of $\Yhg$ belong to this weight space, but so do elements of with the same number of raising and lowering operators such as $x^-_{i,r}\xi_{i,r}x^+_{i,r}$, which means that $\Yhg[0]\subset\Yhg_0$.
     By Proposition \ref{P:tau-wt-space}, this means that $\braid_i$ maps $\Yhg[0]$ into $\Yhg_0$.
     Next, $\varepsilon^+$ maps monomials with operators to zero, so it maps $\Yhg_0$ into $\Yhg[0]$ and hence $\mbraid_i:\Yhg[0]\to\Yhg[0]$.
@@ -135,7 +135,19 @@ For simplicity, we will denote by $\braid_i$ the algebra automorphisms $\braid_i
     which completes the proof.
 \end{proof}
 
-Further, one can show using a slightly different construction and properties of graded algebras that the operators $\mbraid_i$ are invertible and are coalgebra homomorphisms that commute with the antipode, and are therefore Hopf algebra automorphisms of $\Yhg[0]$.
+Notice that by a similar argument as in the proof above, we would obtain the same operators by modifying the braid group operators using $\varepsilon$ applied to the first tensor leg of the triangular decomposition rather than the third.
+In other words, we obtain the same operators if we replace $\varepsilon^+$ in Definition \ref{D:mbraid} with $\varepsilon^- := \varepsilon\otimes{\id}\otimes{\id}$, or even with $\varepsilon\otimes{\id}\otimes\varepsilon$.
+To make this more precise, considering the subsets
+\[N^\pm := \{x^\pm_{i,r} : i\in\I, r\in\N\},\]
+we have that $\Yhg N^\pm$ are left ideals and $N^\pm \Yhg$ are right ideals, and it follows from the PBW theorem that
+\[\Yhg = \Yhg[0] \oplus (N^-\Yhg + \Yhg N^+).\]
+Let $\Pi:\Yhg\to\Yhg[0]$ be the projection onto $\Yhg[0]$ in the direct sum above, then if $\beta$ is any nonzero weight of $\Yhg$ as a representation of $\g$, the corresponding weight space $\Yhg_\beta$ is in the kernel of $\Pi$.
+The restriction of $\Pi$ to the zero weight space $\Yhg_0$ is the projection in the following direct sum:
+\[\Yhg_0 = \Yhg[0] \oplus (\Yhg[0] \cap N^-\Yhg \cap \Yhg N^+).\]
+From this, we can see that the restrictions of $\Pi$ and $\varepsilon^+$ to the zero weight space are in fact the same map, so we may replace $\varepsilon^+$ in Definition \ref{D:mbraid} with $\Pi$.
+This allows us to use whichever of these maps is more convenient for our purposes at a given time.
+For example, the proof of Lemma \ref{L:mbraid-hom} becomes much simpler using $\Pi$: projections are algebra homomorphisms and the rightmost direct summand above is an ideal in the zero weight space, so the restriction of $\Pi$ is an algebra homomorphism, hence $\mbraid_i$ must be as well.
+Further, using properties of graded algebras, one can show that the operators $\mbraid_i$ are invertible and are coalgebra homomorphisms that commute with the antipode, and are therefore Hopf algebra automorphisms of $\Yhg[0]$; see \cite[Lemma 3.5]{friesen_braid_2024} for details.
 
 Now recall that every $w\in\Wg$ has a lift $\braid_w\in\Bg$, and therefore a corresponding automorphism of $\Yhg$ which we will also denote by $\braid_w$.
 The following lemma was proved in \cite[Thm. 5.3.19]{weekes_highest_2016}, and gives an analogue of this lifting for our modified operators.
@@ -212,4 +224,32 @@ Finally, we give an example to illustrate these explicit formulas more concretel
 
 \section{Action on the universal \texorpdfstring{$R$}{R}-matrix}
 
-In this section, we show how the braid group operators and their modified versions interact with the universal $R$-matrix of the Yangian.
+In this section, we show how the braid group operators and their modified versions interact with the universal $R$-matrix of the Yangian introduced in Section \ref{ssec:Y-Hopf}.
+
+Recall the shift homomorphism $\tau_z:\Yhg\inj\Yhg[][z]$ used in the definition of the universal $R$-matrix.
+Since this map restricts to the identity map on $\Ug$, by the intertwiner equation (\ref{eqn:R-intertwiner}) and the coproduct formula given in Section \ref{ssec:Y-Hopf}, for all $x\in\g$ we have:
+\[[\Delta(x), \rmat(z)] = \ad(x\otimes 1 + 1\otimes x)(\rmat(z)) = 0.\]
+From this, it follows that $\rmat(z)$ is fixed by $\exp(\ad(x))\otimes\exp(\ad(x))$, and thus by $\braid_i\otimes\braid_i$ for all $i\in\I$.
+This proves the first part of the following proposition.
+
+\begin{proposition}\label{P:braid-R}
+    For all $i\in\I$, we have:
+    \[(\braid_i\otimes\braid_i)(\rmat(z)) = \rmat(z) \qquad\text{and}\qquad (\mbraid_i\otimes\mbraid_i)(\rmat^0(z)) = \rmat^0(z).\]
+\end{proposition}
+\begin{proof}
+    It remains to prove the second part of the proposition, which we will do by applying $\Pi\otimes\Pi$ to both sides of the identity in the first part of the proposition.
+    By the same reasoning we used when we introduced the projection $\Pi$ in Section \ref{sec:mbraid}, we have that the restriction of $\Pi\otimes\Pi$ to the zero weight space $(\Yhg\otimes\Yhg)_0$ is an algebra homomorphism whose image is $\Yhg[0]\otimes\Yhg[0]$.
+    The universal $R$-matrix and its components $\rmat^\pm(z)$ and $\rmat^0(z)$ have weight zero, and we have
+    \[(\Pi\otimes\Pi)(\rmat^\pm(z)) = 1 \qquad\text{and}\qquad (\Pi\otimes\Pi)(\rmat^0(z)) = \rmat^0(z).\]
+    From this, it follows that
+    \[(\Pi\otimes\Pi)(\rmat(z)) = (\Pi\otimes\Pi)(\rmat^+(z)) \cdot (\Pi\otimes\Pi)(\rmat^0(z)) \cdot (\Pi\otimes\Pi)(\rmat^-(z)) = \rmat^0(z),\]
+    so the right-hand side is as desired.
+    For the left-hand side, again using the fact that the restriction of $\Pi\otimes\Pi$ is a homomorphism, we obtain
+    \[(\Pi\circ\braid_i)^{\otimes 2}(\rmat(z)) = (\Pi\circ\braid_i)^{\otimes 2}(\rmat^+(z)) \cdot (\mbraid_i\otimes\mbraid_i)(\rmat^0(z)) \cdot (\Pi\circ\braid_i)^{\otimes 2}(\rmat^-(z)),\]
+    and now it suffices to show that $(\Pi\circ\braid_i)^{\otimes 2}(\rmat^\pm(z))=1$.
+    To see this, recall that $\rmat^\pm(z)$ are defined as sums of components labeled by weights, so we have
+    \[(\braid_i\otimes\braid_i)(\rmat^\pm(z)) = \sum_{\beta\in Q^+}(\braid_i\otimes\braid_i)(\rmat_\beta^\pm(z))\]
+    where the coefficients of the summand belong to $\Yhg_{\pm s_i(\beta)}\otimes\Yhg_{\mp s_i(\beta)}$.
+    Thus each summand is in the kernel of $\Pi\otimes\Pi$ except in the case where $\beta=0$, since $\rmat_0^\pm(z)=1$.
+    This completes the proof.
+\end{proof}
