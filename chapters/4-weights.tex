@@ -1,3 +1,41 @@
-\chapter{Weights of extremal vectors}
+\chapter{Dual braid group action and weights}
 
-Here we show how the braid group acts on so-called ``extremal vectors,'' leading us to a formula for the Baxter polynomials.
+\section{Dualizing the braid group action}
+
+In this section, we dualize the modified action of the braid group $\Bg$ on the Cartan part $\Yhg[0]$ of the Yangian that we constructed in the previous chapter.
+In doing so, we obtain an action of $\Bg$ by automorphisms on the group $(1+u^{-1}\C\db{u^{-1}})^\I$ of $\I$-tuples of formal series in $u^{-1}$ with constant coefficient $1$.
+
+Let $\vartheta$ be the group antiautomorphism of $\Bg$ uniquely determined by $\vartheta(\braid_i)=\braid_i$ for all $i\in\I$.
+Notice that if $w = s_{i_1}\cdots s_{i_\ell}$ is a reduced expression for $w\in\Wg$, then $w^{-1} = s_{i_\ell}\cdots s_{i_1}$, so it follows that $\vartheta(\braid_w)=\braid_{w^{-1}}$ for any $w\in\Wg$.
+We can use this antiautomorphism to define an action of $\Bg$ on the linear dual $\Yhg[0]^*$ as follows: for $\sigma\in\Bg$, $y\in\Yhg[0]$, and $f\in\Yhg[0]^*$, let
+\[\sigma(f)(y) = f(\vartheta(\sigma)\cdot y).\]
+This action is uniquely determined by the requirement that $\braid_i$ operates as the transpose of $\mbraid_i$, i.e., for all $i\in\I$ and $f\in\Yhg[0]^*$, we have
+\[\braid_i(f) = \mbraid_i^*(f) = f\circ\mbraid_i.\]
+
+Recall the Drinfeld Hopf algebra structure on $\Yhg[0]$ from Section \ref{ssec:Y-Hopf}.
+This induces a commutative algebra structure on $\Yhg[0]^*$ where the unit is given by the counit $\varepsilon_D$ and the product is given by $\Delta_D^*$, the transpose of the coproduct.
+Since each modified braid group operator $\mbraid_i$ is a coalgebra homomorphism, $\Bg$ acts on $\Yhg[0]^*$ by algebra automorphisms.
+Since each $\mbraid_i$ is an algebra automorphism, the space of algebra homomorphisms $\Hom_{\text{Alg}}(\Yhg[0],\C)$ is a subrepresentation of $\Yhg[0]^*$.
+This space is a subgroup of the group of units in $\Yhg[0]^*$, and we have an isomorphism of groups
+\[\Hom_{\text{Alg}}(\Yhg[0],\C)\to(1+u^{-1}\C\db{u^{-1}})^\I, \qquad f\mapsto(f(\xi_i(u)))_{i\in\I}.\]
+The following proposition gives a formula for the action of $\Bg$ on this group.
+
+\begin{proposition}\label{P:Tan-formula}
+    If $\ul = (\lambda_i(u))_{i\in\I}\in (1+u^{-1}\C\db{u^{-1}})^\I$, then the for all $i,j\in\I$, the $i$th component of $\braid_j(\ul)$ is given by
+    \[\braid_j(\ul)_i = \lambda_i(u)\prod_{k=0}^{\abs{a_{ji}}-1}\lambda_j\left(u-\frac{\hbar d_j}{2}(\abs{a_{ji}}-2k)\right)^{(-1)^{\delta_{ij}}}.\]
+\end{proposition}
+\begin{proof}
+    By the discussion above, we have
+    \[\braid_j(\ul)_i = \braid_j(\ul)(\xi_i(u)) = \ul(\mbraid_j(\xi_i(u)))\]
+    where we view $\ul$ as an algebra homomorphism in $\Yhg[0]^*$ via the above isomorphism.
+    Then using the formula for $\mbraid_j(\xi_i(u))$ given in Corollary \ref{C:tau-xi}, we see that the claimed formula holds.
+\end{proof}
+
+The formula for the action of $\Bg$ on $(1+u^{-1}\C\db{u^{-1}})^\I$ given in the above proposition is the same as the formula for the action of $\Bg$ on the group $(\C(u)^\times)^\I$ of $\I$-tuples of rational functions defined in \cite[Prop. 3.1]{tan_braid_2015}.
+This is why we have used the antiautomorphism $\vartheta$ to define the dual action rather than the usual antiautomorphism $\sigma\mapsto\sigma^{-1}$ of $\Bg$.
+
+
+\section{Extending the representation space}
+
+
+\section{Weights of extremal vectors}
