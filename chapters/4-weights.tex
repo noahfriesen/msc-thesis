@@ -37,5 +37,128 @@ This is why we have used the antiautomorphism $\vartheta$ to define the dual act
 
 \section{Extending the representation space}
 
+In this section, we will extend our dual braid group action to a larger space in order to reconcile our action and Tan's (see the end of the previous section).
+
+Let $M$ be the subgroup of $\C\dparen{u^{-1}}^\times$ consisting of monic Laurent series in $u^{-1}$:
+\[M := \bigcup_{k\in\Z}u^{k}(1+u^{-1}\C\db{u^{-1}}).\]
+Define the \emph{degree} of $\lambda(u)\in M$ to be the unique integer $k$ for which $u^{-k}\lambda(u)\in 1+u^{-1}\C\db{u^{-1}}$.
+
+\begin{lemma}\label{L:diff-eqn}
+    Let $\lambda(u) = 1+\hbar\sum_{r\geq 0}\lambda_ru^{-r-1}$ be a series in $1+u^{-1}\C\db{u^{-1}}$ and let $d\in\C^\times$.
+    Then the formal difference equation
+    \[\frac{\mu(u+\hbar d)}{\mu(u)} = \lambda(u)\]
+    has a solution in $M$ if and only if $\lambda_0\in d\Z$.
+    In this case, $\mu(u)$ is unique and has degree $\lambda_0/d$.
+\end{lemma}
+\begin{proof}
+    Suppose $\mu(u)$ has degree $k$, and write $\mu(u)=u^k\dot{\mu}(u)$ where $\dot{\mu}\in 1+u^{-1}\C\db{u^{-1}}$.
+    Then the difference equation becomes
+    \[\left(1+\hbar\frac{d}{u}\right)^k \frac{\dot{\mu}(u+\hbar d)}{\dot{\mu}(u)} = \lambda(u).\]
+    Taking the formal logarithm of both sides, we obtain
+    \[k\log(1+\hbar\frac{d}{u}) + b(u+\hbar d) - b(u) = \log(\lambda(u)),\]
+    where
+    \[b(u) = \sum_{r\geq 0}b_ru^{-r-1} := \log(\dot{\mu}(u)).\]
+    Taking the coefficient of $u^{-1}$ on both sides, we see that $k\hbar d = \hbar\lambda_0$.
+    Thus if a solution exists, we must have $\lambda_0\in d\Z$ and $k = \lambda_0/d$.
+
+    Conversely, suppose that $\lambda_0\in d\Z$.
+    Take $k = \lambda/d$, then we can solve the above equation for $b(u)$ recursively by expressing $b_{r}$ in terms of $b_s$ for $s<r$ and the coefficients of $k\log(1+\hbar\frac{d}{u})$ and $\log(\lambda(u))$.
+    This allows us to construct the solution $\mu(u)$.
+\end{proof}
+
+Let $(\omega_i)_{i\in\I}$ denote the \emph{fundamental weights} of $\g$, which form a basis of $\h^*$ dual to the basis $(h_i)_{i\in\I}$ of $\h$, i.e., $\omega_i(h_j) = \delta_{ij}$ for all $i,j\in\I$.
+Let $\Lambda := \bigoplus_{i\in\I}\Z\omega_i$ denote the \emph{weight lattice} of $\g$.
+Recall from Section \ref{sec:braid} that there is an action of $\Wg$ on $\h^*$, so we may view $\Lambda$ as a representation of $\Bg$ through this action.
+We define the \emph{degree} of an element of $M^\I$ via the following group homomorphism:
+\[\deg:M^\I\to\Lambda, \qquad (\lambda_i(u))_{i\in\I}\mapsto\sum_{i\in\I}\deg(\lambda_i(u))\omega_i.\]
+Next, for each $a\in\C$ let $\q^a$ be the group automorphism of $M$ given by the translation $\lambda(u)\mapsto\lambda(u+a\frac{\hbar}{2})$.
+Similarly, given a diagonal matrix $A = (a_i)_{i\in\I}$, let $\q^A$ be the group automorphism of $M^\I$ given by
+\[\q^A(\lambda(u))_{i\in\I} = (\q^{a_i}\lambda_i(u))_{i\in\I} = (\lambda_i(u+a_i\tfrac{\hbar}{2}))_{i\in\I}.\]
+We will only be interested in the case where $A = 2D$, where $D = (d_i)_{i\in\I}$ is the diagonal matrix of symmetrizing integers for $\g$.
+Hence the map $\q^{2D}$ is given by $\lambda_i(u)\mapsto\lambda_i(u+\hbar d_i)$ for each $i\in\I$.
+Also note that for all $\um\in M^\I$, the element $(\q^{2D}\um)\um^{-1}$ belongs to $(1+u^{-1}\C\db{u^{-1}})^\I$, so we may apply our dual braid group action to it.
+
+\begin{proposition}\label{P:Bg-action-M}
+    For all $\sigma\in\Bg$ and $\um = (\mu_i(u))_{i\in\I} \in M^\I$, there exists a unique element $\sigma(\mu)\in M^\I$ satisfying
+    \[\sigma\left(\frac{\q^{2D}\um}{\um}\right) = \frac{\q^{2D}\sigma(\um)}{\sigma(\um)}.\]
+    This defines an action of $\Bg$ on $M^\I$ by group automorphisms for which $1+u^{-1}\C\db{u^{-1}}^\I$ is a subrepresentation and $\deg:M^\I\to\Lambda$ is a module homomorphism:
+    \[\deg\sigma(\um) = \sigma(\deg\um).\]
+\end{proposition}
+\begin{proof}
+    Let $\ul = (\lambda_i(u))_{i\in\I}$ denote the element $(\q^{2D}\um)\um^{-1}$, and write $\lambda_i(u) = 1+\hbar\sum_{r\geq 0}\lambda_{i,r}u^{-r-1}$.
+    There is an isomorphism
+    \[\h^*\to\C^\I, \qquad f\mapsto (f(h_i))_{i\in\I} = (f, \alpha_i)_{i\in\I},\]
+    so we have an action of $\Bg$ on $\C^\I$.
+    Then
+    \[\sigma(\ul) = 1 + \hbar\sigma\cdot(\lambda_{i,0})u^{-1} + O(u^{-2}),\]
+    and using the action of $\Bg$ on $\C^\I$, we have
+    \[\sigma\cdot(\lambda_{i,0})_{i\in\I} = \left(\sum_{j\in\I}d_j^{-1}\lambda_{j,0}(\alpha_i,\sigma(\omega_j))\right)_{i\in\I}\]
+    By the previous lemma, we have $\lambda_{j,0} = d_j\deg\mu_j(u)$ for all $j\in\I$, so the above is equal to $(\alpha_i,\sigma(\deg\um))_{i\in\I}$.
+    Since the action of $\Bg$ on $\h^*$ preserves $\Lambda$, we have $(\alpha_i,\sigma(\deg\um))\in d_i\Z$ for all $i\in\I$.
+    Thus by the previous lemma, $\sigma(\um)$ exists, is unique, and has degree $\sigma(\deg\um)$.
+\end{proof}
+
+By considering the unique simply connected Lie group with Lie algebra $\g$, one can show that there is an action of $\Wg$ by group automorphisms on $(\C^\times)^\I$ given explicitly for all $i,j\in\I$ and $\lambda_i\in\C^\times$ by
+\[s_j(\lambda_i)_{i\in\I} = (\lambda_i\lambda_j^{-a_{ji}})_{i\in\I},\]
+hence we get an action of $\Bg$ on this group as well.
+Then using the action given in the above proposition, we have an action of $\Bg$ on the group $(\C^\times)^\I\times M^\I$.
+There is an isomorphism from this group to $(\C\dparen{u^{-1}}^\times)^\I$ given by component-wise multiplication:
+\[((\lambda_i)_{i\in\I}, (\mu_i(u))_{i\in\I}) \mapsto (\lambda_i\mu_i(u))_{i\in\I},\]
+hence $\Bg$ acts on $(\C\dparen{u^{-1}}^\times)^\I$ by group automorphisms via the formulas of Proposition \ref{P:Tan-formula}.
+The space $(\C(u)^\times)^\I$ is a subrepresentation, so we have successfully extended our dual braid group action so that the underlying space agrees with that of \cite[Prop. 3.1]{tan_braid_2015}.
+
 
 \section{Weights of extremal vectors}
+
+In this section, we will show that the braid group action of the previous section determines the weights of the \emph{extremal vectors} of a representation of the Yangian.
+
+Let $V$ be a finite-dimensional irreducible representation of $\Yhg$ with highest weight $\ul$, and let $\lambda\in\h^*$ be the highest weight of $V$ as a representation of $\g$.
+The \emph{extremal vectors} are those which lie in the Weyl group orbit of the highest weight vector, i.e., they are elements of $V_{w(\lambda)}$ for $w\in\Wg$.
+Recall that the highest weight space is one-dimensional, so by Proposition \ref{P:tau-wt-space}, each extremal weight space is also one-dimensional.
+The following proposition is the main result of this section, and provides a strengthening of \cite[Prop. 4.5]{tan_braid_2015}.
+
+\begin{proposition}\label{P:extremal-weight}
+    Let $V$ be as above.
+    For all $i\in\I$ and $w\in\Wg$, the eigenvalue of $\xi_i(u)$ on the extremal weight space $V_{w(\lambda)}$ is $\braid_w(\ul)_i$.
+    In particular, if $V=L(\uP)$ then this eigenvalue is equal to
+    \[\frac{\q^{2d_i}\braid_w(\uP)_i}{\braid_w(\uP)_i}.\]
+\end{proposition}
+\begin{proof}
+    Let $v$ be a highest weight vector of $V$.
+    Using the definition of our dual braid group action from the first section of this chapter, we have
+    \[\braid_w(\ul)_i = \ul(\mbraid_{w^{-1}}(\xi_i(u))),\]
+    so for the first part of the proposition, it suffices to prove that the eigenvalue of $\xi_i(u)$ on the extremal vector $\Omega_w := \braid_{w^{-1}}(v)$ is the same as that of $\mbraid_w(\xi_i(u))$ on the highest weight vector $v$.
+    Let $\mu_{i,w}(u)$ denote this former eigenvalue, so that
+    \[\xi_i(u)\cdot\Omega_w = \mu_{i,w}(u)\Omega_w.\]
+    Applying the (unmodified) braid group operator $\braid^V_w$ to both sides of the above equation, for the right-hand side we obtain $\mu_{i,w}(u)v$.
+    For the left-hand side, we have
+    \[\braid^V_w(\xi_i(u)\cdot\Omega_w) = \braid^{\Yhg}_w(\xi_i(u))\cdot\braid^V_w(\Omega_w) = \braid^{\Yhg}_w(\xi_i(u))\cdot v\]
+    where in the first equality we have used Corollary \ref{C:tau-alg}.
+    Now $\braid^{\Yhg}_w$ sends $\xi_i(u)$ to something in the zero weight space $\Yhg_0$ but not necessarily something in $\Yhg[0]$.
+    But any terms not in $\Yhg[0]$ have raising operators on the right and thus kill the highest weight vector $v$, so in fact we have
+    \[\braid^{\Yhg}_w(\xi_i(u))\cdot v = \mbraid_w(\xi_i(u))\cdot v\]
+    as desired, which completes the proof of the first part of the proposition.
+
+    The second part follows from the first part, and that since $\ul = (\q^{2D}\uP)\uP^{-1}$, by Proposition \ref{P:Bg-action-M} we have $\braid_w(\ul) = (\q^{2D}\braid_w(\uP))\braid_w(\uP)^{-1}$.
+\end{proof}
+
+Lastly, we prove a corollary of the above proposition which further relates our work to that of Tan; cf. \cite[Prop. 4.5]{tan_braid_2015}.
+
+\begin{corollary}\label{C:Tan-monic}
+    Let $\uP = (P_i(u))_{i\in\I}$ be a tuple of Drinfeld polynomials and let $V = L(\uP)$.
+    For all $i\in\I$ and $w\in\Wg$, define $P_{i,w}(u)\in M$ by
+    \[P_{i,w}(u) :=
+    \begin{cases}
+        \braid_w(\uP)_i & \text{if } w^{-1}(\alpha_i)\in\Phi^+ \\
+        \braid_w(\uP)_i^{-1} & \text{if } w^{-1}(\alpha_i)\notin\Phi^+
+    \end{cases}\]
+    Then $P_{i,w}(u)$ is a monic polynomial in $u$.
+\end{corollary}
+\begin{proof}
+    By \cite[Remark 2.2]{chari_fundamental_1991}, there is a monic polynomial $P^+_{i,w}(u)$ such that the eigenvalue of $\xi_i(u)$ on the extremal weight space $V_{w(\lambda)}$ is given by
+    \[\frac{P^+_{i,w}(u+\hbar d_i)^{f_i(w)}}{P^+_{i,w}(u)^{f_i(w)}},\]
+    where $f_i(w)$ is $1$ if $w\in\Phi^+$ and $-1$ otherwise.
+    By the above proposition and the uniqueness assertion of Lemma \ref{L:diff-eqn}, we have
+    \[P^+_{i,w}(u)^{f_i(w)} = \braid_w(\uP)_i = P_{i,w}(u)^{f_i(w)}\]
+    hence $P_{i,w}(u)$ coincides with the monic polynomial $P^+_{i,w}(u)$.
+\end{proof}
