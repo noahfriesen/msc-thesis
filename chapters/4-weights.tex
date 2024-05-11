@@ -21,7 +21,7 @@ This space is a subgroup of the group of units in $\Yhg[0]^*$, and we have an is
 The following proposition gives a formula for the action of $\Bg$ on this group.
 
 \begin{proposition}\label{P:Tan-formula}
-    If $\ul = (\lambda_i(u))_{i\in\I}\in (1+u^{-1}\C\db{u^{-1}})^\I$, then the for all $i,j\in\I$, the $i$th component of $\braid_j(\ul)$ is given by
+    If $\ul = (\lambda_i(u))_{i\in\I}\in (1+u^{-1}\C\db{u^{-1}})^\I$, then for all $i,j\in\I$, the $i$th component of $\braid_j(\ul)$ is given by
     \[\braid_j(\ul)_i = \lambda_i(u)\prod_{k=0}^{\abs{a_{ji}}-1}\lambda_j\left(u-\frac{\hbar d_j}{2}(\abs{a_{ji}}-2k)\right)^{(-1)^{\delta_{ij}}}.\]
 \end{proposition}
 \begin{proof}
@@ -100,7 +100,7 @@ Also note that for all $\um\in M^\I$, the element $(\q^{2D}\um)\um^{-1}$ belongs
 
 By considering the unique simply connected Lie group with Lie algebra $\g$, one can show that there is an action of $\Wg$ by group automorphisms on $(\C^\times)^\I$ given explicitly for all $i,j\in\I$ and $\lambda_i\in\C^\times$ by
 \[s_j(\lambda_i)_{i\in\I} = (\lambda_i\lambda_j^{-a_{ji}})_{i\in\I},\]
-hence we get an action of $\Bg$ on this group as well.
+hence we get an action of $\Bg$ on this group as well; see \cite[Remark 4.5]{friesen_braid_2024} for details.
 Then using the action given in the above proposition, we have an action of $\Bg$ on the group $(\C^\times)^\I\times M^\I$.
 There is an isomorphism from this group to $(\C\dparen{u^{-1}}^\times)^\I$ given by component-wise multiplication:
 \[((\lambda_i)_{i\in\I}, (\mu_i(u))_{i\in\I}) \mapsto (\lambda_i\mu_i(u))_{i\in\I},\]
@@ -142,7 +142,7 @@ The following proposition is the main result of this section, and provides a str
     The second part follows from the first part, and that since $\ul = (\q^{2D}\uP)\uP^{-1}$, by Proposition \ref{P:Bg-action-M} we have $\braid_w(\ul) = (\q^{2D}\braid_w(\uP))\braid_w(\uP)^{-1}$.
 \end{proof}
 
-Lastly, we prove a corollary of the above proposition which further relates our work to that of Tan; cf. \cite[Prop. 4.5]{tan_braid_2015}.
+We now prove a corollary of the above proposition which further relates our work to that of Tan; cf. \cite[Prop. 4.5]{tan_braid_2015}.
 
 \begin{corollary}\label{C:Tan-monic}
     Let $\uP = (P_i(u))_{i\in\I}$ be a tuple of Drinfeld polynomials and let $V = L(\uP)$.
@@ -162,3 +162,39 @@ Lastly, we prove a corollary of the above proposition which further relates our 
     \[P^+_{i,w}(u)^{f_i(w)} = \braid_w(\uP)_i = P_{i,w}(u)^{f_i(w)}\]
     hence $P_{i,w}(u)$ coincides with the monic polynomial $P^+_{i,w}(u)$.
 \end{proof}
+
+Lastly, we give an explicit example of the dual braid group action defined in this chapter.
+
+\begin{example}\label{E:dual-braid-sl3}
+    Let $j\in\I$ and $a\in\C$.
+    The representation $L(\uP)$ of $\Yhg$ with Drinfeld polynomials given by
+    \[P_i(u) =
+    \begin{cases}
+        u-a & \text{if } i=j \\
+        1 & \text{if } i\neq j
+    \end{cases}\]
+    is called a \emph{fundamental representation}, and is denoted $L_{\omega_j}(a)$ since the highest weight of $L(\uP)$ as a representation of $\g$ is the $j$th fundamental weight $\omega_j$.
+
+    In this example, we will consider the fundamental representation $L_{\omega_1}(a)$ of $Y_\hbar(\mfsl_3)$, which has Drinfeld polynomials $P_1(u) = u-a$ and $P_2(u) = 1$.
+    As a representation of $\mfsl_3$, $L_{\omega_1}(a)$ has three weights, which are the linear functionals that send $(h_1,h_2)$ to $(1,0)$, $(-1,1)$, and $(0,-1)$.
+    All three of these weights are extremal, since they are equal to $\omega_1$, $s_1(\omega_1)$, and $s_2s_1(\omega_1)$, respectively.
+    The last of these three weights is the lowest weight, since it is also equal to $s_1s_2s_1(\omega_1)$ and $w_0 = s_1s_2s_1$ is the longest element of the Weyl group of $\mfsl_3$.
+
+    By Proposition \ref{P:Tan-formula}, we can use the formulas for the modified braid group action we found in Example \ref{E:sl3-mbraid-action} to get the formulas for the dual action on the Drinfeld polynomials.
+    For $i,j\in\{1,2\}$ with $i\neq j$, we have
+    \[\braid_i(P_i(u)) = \frac{1}{P_i(u-\hbar)}, \qquad \braid_i(P_j(u)) = P_j(u)P_i(u-\tfrac{\hbar}{2}).\]
+    Now we can use Proposition \ref{P:extremal-weight} to compute the eigenvalues of $\xi_1(u)$ and $\xi_2(u)$ on the lowest weight space $V_{w_0(\omega_1)}$.
+    By the above, we find that
+    \begin{align*}
+        \braid_{w_0}(\uP) & = \braid_1\braid_2\braid_1(u-a,\ 1) \\
+        &= \braid_1\braid_2\left(\frac{1}{u-a-\hbar},\ u-a-\frac{\hbar}{2}\right) \\
+        &= \braid_1\left(1,\ \frac{1}{u-a-\frac{3\hbar}{2}}\right) \\
+        &= \left(1,\ \frac{1}{u-a-\frac{3\hbar}{2}}\right)
+    \end{align*}
+    so $\xi_1(u)$ acts on the lowest weight space by $1$, and $\xi_2(u)$ acts by
+    \[\frac{u-a-\frac{3\hbar}{2}}{u-a-\frac{\hbar}{2}}.\]
+    We note that this is exactly the lowest weight $(\mu_i(u))_{i\in\I}$ that we obtain using the following formula given in \cite[Prop. 3.5]{gautam_poles_2023}: for all $i\in\I$,
+    \[\mu_i(u) = \frac{P_{i^*}(u-\hbar\kappa)}{P_{i^*}(u-\hbar\kappa+\hbar d_i)},\]
+    where $i\mapsto i^*$ is the involution of the Dynkin diagram of $\g$ induced by $\alpha_{i^*} := -w_0(\alpha_i)$, and $\kappa$ is $1/4$ times the eigenvalue of the Casimir element $C\in\Ug$ on the adjoint representation.
+    In this case, one can check that the involution is given by $1\mapsto 2$, and that we have $\kappa = 3/2$.
+\end{example}
