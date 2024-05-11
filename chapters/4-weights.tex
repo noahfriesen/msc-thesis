@@ -35,7 +35,7 @@ The formula for the action of $\Bg$ on $(1+u^{-1}\C\db{u^{-1}})^\I$ given in the
 This is why we have used the antiautomorphism $\vartheta$ to define the dual action rather than the usual antiautomorphism $\sigma\mapsto\sigma^{-1}$ of $\Bg$.
 
 
-\section{Extending the representation space}
+\section{Extending the representation space}\label{sec:extending}
 
 In this section, we will extend our dual braid group action to a larger space in order to reconcile our action and Tan's (see the end of the previous section).
 
@@ -173,7 +173,7 @@ Lastly, we give an explicit example of the dual braid group action defined in th
         u-a & \text{if } i=j \\
         1 & \text{if } i\neq j
     \end{cases}\]
-    is called a \emph{fundamental representation}, and is denoted $L_{\omega_j}(a)$ since the highest weight of $L(\uP)$ as a representation of $\g$ is the $j$th fundamental weight $\omega_j$.
+    is called a \emph{fundamental representation}, and is denoted $L_{\omega_j}(a)$ (or simply $L_{\omega_j}$ in the case where $a=0$) since the highest weight of $L(\uP)$ as a representation of $\g$ is the $j$th fundamental weight $\omega_j$.
 
     In this example, we will consider the fundamental representation $L_{\omega_1}(a)$ of $Y_\hbar(\mfsl_3)$, which has Drinfeld polynomials $P_1(u) = u-a$ and $P_2(u) = 1$.
     As a representation of $\mfsl_3$, $L_{\omega_1}(a)$ has three weights, which are the linear functionals that send $(h_1,h_2)$ to $(1,0)$, $(-1,1)$, and $(0,-1)$.
@@ -193,7 +193,7 @@ Lastly, we give an explicit example of the dual braid group action defined in th
     \end{align*}
     so $\xi_1(u)$ acts on the lowest weight space by $1$, and $\xi_2(u)$ acts by
     \[\frac{u-a-\frac{3\hbar}{2}}{u-a-\frac{\hbar}{2}}.\]
-    We note that this is exactly the lowest weight $(\mu_i(u))_{i\in\I}$ that we obtain using the following formula given in \cite[Prop. 3.5]{gautam_poles_2023}: for all $i\in\I$,
+    Note that this is exactly the lowest weight $(\mu_i(u))_{i\in\I}$ that we obtain using the following formula given in \cite[Prop. 3.5]{gautam_poles_2023}: for all $i\in\I$,
     \[\mu_i(u) = \frac{P_{i^*}(u-\hbar\kappa)}{P_{i^*}(u-\hbar\kappa+\hbar d_i)},\]
     where $i\mapsto i^*$ is the involution of the Dynkin diagram of $\g$ induced by $\alpha_{i^*} := -w_0(\alpha_i)$, and $\kappa$ is $1/4$ times the eigenvalue of the Casimir element $C\in\Ug$ on the adjoint representation.
     In this case, one can check that the involution is given by $1\mapsto 2$, and that we have $\kappa = 3/2$.
