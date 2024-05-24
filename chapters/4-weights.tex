@@ -66,11 +66,11 @@ Define the \emph{degree} of $\lambda(u)\in M$ to be the unique integer $k$ for w
     This allows us to construct the solution $\mu(u)$.
 \end{proof}
 
-Let $(\omega_i)_{i\in\I}$ denote the \emph{fundamental weights} of $\g$, which form a basis of $\h^*$ dual to the basis $(h_i)_{i\in\I}$ of $\h$, i.e., $\omega_i(h_j) = \delta_{ij}$ for all $i,j\in\I$.
-Let $\Lambda := \bigoplus_{i\in\I}\Z\omega_i$ denote the \emph{weight lattice} of $\g$.
+Let $(\fund_i)_{i\in\I}$ denote the \emph{fundamental weights} of $\g$, which form a basis of $\h^*$ dual to the basis $(h_i)_{i\in\I}$ of $\h$, i.e., $\fund_i(h_j) = \delta_{ij}$ for all $i,j\in\I$.
+Let $\Lambda := \bigoplus_{i\in\I}\Z\fund_i$ denote the \emph{weight lattice} of $\g$.
 Recall from Section \ref{sec:braid} that there is an action of $\Wg$ on $\h^*$, so we may view $\Lambda$ as a representation of $\Bg$ through this action.
 We define the \emph{degree} of an element of $M^\I$ via the following group homomorphism:
-\[\deg:M^\I\to\Lambda, \qquad (\lambda_i(u))_{i\in\I}\mapsto\sum_{i\in\I}\deg(\lambda_i(u))\omega_i.\]
+\[\deg:M^\I\to\Lambda, \qquad (\lambda_i(u))_{i\in\I}\mapsto\sum_{i\in\I}\deg(\lambda_i(u))\fund_i.\]
 Next, for each $a\in\C$ let $\q^a$ be the group automorphism of $M$ given by the translation $\lambda(u)\mapsto\lambda(u+a\frac{\hbar}{2})$.
 Similarly, given a diagonal matrix $A = (a_i)_{i\in\I}$, let $\q^A$ be the group automorphism of $M^\I$ given by
 \[\q^A(\lambda(u))_{i\in\I} = (\q^{a_i}\lambda_i(u))_{i\in\I} = (\lambda_i(u+a_i\tfrac{\hbar}{2}))_{i\in\I}.\]
@@ -92,7 +92,7 @@ Also note that for all $\um\in M^\I$, the element $(\q^{2D}\um)\um^{-1}$ belongs
     Then
     \[\sigma(\ul) = 1 + \hbar\sigma\cdot(\lambda_{i,0})u^{-1} + O(u^{-2}),\]
     and using the action of $\Bg$ on $\C^\I$, we have
-    \[\sigma\cdot(\lambda_{i,0})_{i\in\I} = \left(\sum_{j\in\I}d_j^{-1}\lambda_{j,0}(\alpha_i,\sigma(\omega_j))\right)_{i\in\I}\]
+    \[\sigma\cdot(\lambda_{i,0})_{i\in\I} = \left(\sum_{j\in\I}d_j^{-1}\lambda_{j,0}(\alpha_i,\sigma(\fund_j))\right)_{i\in\I}\]
     By the previous lemma, we have $\lambda_{j,0} = d_j\deg\mu_j(u)$ for all $j\in\I$, so the above is equal to $(\alpha_i,\sigma(\deg\um))_{i\in\I}$.
     Since the action of $\Bg$ on $\h^*$ preserves $\Lambda$, we have $(\alpha_i,\sigma(\deg\um))\in d_i\Z$ for all $i\in\I$.
     Thus by the previous lemma, $\sigma(\um)$ exists, is unique, and has degree $\sigma(\deg\um)$.
@@ -173,17 +173,17 @@ Lastly, we give an explicit example of the dual braid group action defined in th
         u-a & \text{if } i=j \\
         1 & \text{if } i\neq j
     \end{cases}\]
-    is called a \emph{fundamental representation}, and is denoted $L_{\omega_j}(a)$ (or simply $L_{\omega_j}$ in the case where $a=0$) since the highest weight of $L(\uP)$ as a representation of $\g$ is the $j$th fundamental weight $\omega_j$.
+    is called a \emph{fundamental representation}, and is denoted $L_{\fund_j}(a)$ (or simply $L_{\fund_j}$ in the case where $a=0$) since the highest weight of $L(\uP)$ as a representation of $\g$ is the $j$th fundamental weight $\fund_j$.
 
-    In this example, we will consider the fundamental representation $L_{\omega_1}(a)$ of $Y_\hbar(\mfsl_3)$, which has Drinfeld polynomials $P_1(u) = u-a$ and $P_2(u) = 1$.
-    As a representation of $\mfsl_3$, $L_{\omega_1}(a)$ has three weights, which are the linear functionals that send $(h_1,h_2)$ to $(1,0)$, $(-1,1)$, and $(0,-1)$.
-    All three of these weights are extremal, since they are equal to $\omega_1$, $s_1(\omega_1)$, and $s_2s_1(\omega_1)$, respectively.
-    The last of these three weights is the lowest weight, since it is also equal to $s_1s_2s_1(\omega_1)$ and $w_0 = s_1s_2s_1$ is the longest element of the Weyl group of $\mfsl_3$.
+    In this example, we will consider the fundamental representation $L_{\fund_1}(a)$ of $Y_\hbar(\mfsl_3)$, which has Drinfeld polynomials $P_1(u) = u-a$ and $P_2(u) = 1$.
+    As a representation of $\mfsl_3$, $L_{\fund_1}(a)$ has three weights, which are the linear functionals that send $(h_1,h_2)$ to $(1,0)$, $(-1,1)$, and $(0,-1)$.
+    All three of these weights are extremal, since they are equal to $\fund_1$, $s_1(\fund_1)$, and $s_2s_1(\fund_1)$, respectively.
+    The last of these three weights is the lowest weight, since it is also equal to $s_1s_2s_1(\fund_1)$ and $w_0 = s_1s_2s_1$ is the longest element of the Weyl group of $\mfsl_3$.
 
     By Proposition \ref{P:Tan-formula}, we can use the formulas for the modified braid group action we found in Example \ref{E:sl3-mbraid-action} to get the formulas for the dual action on the Drinfeld polynomials.
     For $i,j\in\{1,2\}$ with $i\neq j$, we have
     \[\braid_i(P_i(u)) = \frac{1}{P_i(u-\hbar)}, \qquad \braid_i(P_j(u)) = P_j(u)P_i(u-\tfrac{\hbar}{2}).\]
-    Now we can use Proposition \ref{P:extremal-weight} to compute the eigenvalues of $\xi_1(u)$ and $\xi_2(u)$ on the lowest weight space $V_{w_0(\omega_1)}$.
+    Now we can use Proposition \ref{P:extremal-weight} to compute the eigenvalues of $\xi_1(u)$ and $\xi_2(u)$ on the lowest weight space $V_{w_0(\fund_1)}$.
     By the above, we find that
     \begin{align*}
         \braid_{w_0}(\uP) & = \braid_1\braid_2\braid_1(u-a,\ 1) \\
