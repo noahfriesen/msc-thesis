@@ -150,7 +150,7 @@ For example, the proof of Lemma \ref{L:mbraid-hom} becomes much simpler using $\
 Further, using properties of graded algebras, one can show that the operators $\mbraid_i$ are invertible and are coalgebra homomorphisms that commute with the antipode, and are therefore Hopf algebra automorphisms of $\Yhg[0]$; see \cite[Lemma 3.5]{friesen_braid_2024} for details.
 
 Now recall that every $w\in\Wg$ has a lift $\braid_w\in\Bg$, and therefore a corresponding automorphism of $\Yhg$ which we will also denote by $\braid_w$.
-The following lemma was proved in \cite[Thm. 5.3.19]{weekes_highest_2016}, and gives an analogue of this lifting for our modified operators.
+The following lemma was proved in \cite[Lemma 3.6]{friesen_braid_2024} using the same method as in \cite[Thm. 5.3.19]{weekes_highest_2016}, and gives an analogue of this lifting for our modified operators.
 
 \begin{lemma}\label{L:Tw}
     Let $w=s_{i_1}\cdots s_{i_\ell}$ be a reduced expression. Then
@@ -217,8 +217,19 @@ Finally, we give an example to illustrate these explicit formulas more concretel
     \[\mbraid_i(\xi_i(u)) = \frac{1}{\xi_i(u-\hbar)}, \qquad
     \mbraid_i(\xi_j(u)) = \xi_j(u)\xi_i(u-\tfrac{\hbar}{2}),\]
     for all $i\neq j$.
-    Using these formulas, it is easy to check that these braid group operators satisfy the braid relation for $\mfsl_3$:
-    \[\mbraid_1\mbraid_2\mbraid_1 = \mbraid_2\mbraid_1\mbraid_2.\]
+    Using these formulas, it is easy to check that these braid group operators satisfy the braid relation $\mbraid_1\mbraid_2\mbraid_1 = \mbraid_2\mbraid_1\mbraid_2$ for $\mfsl_3$: we have
+    \begin{align*}
+        \mbraid_1\mbraid_2\mbraid_1(\xi_1(u)) &= \mbraid_1\mbraid_2\left(\frac{1}{\xi_1(u-\hbar)}\right) \\
+        &= \mbraid_1\left(\frac{1}{\xi_1(u-\hbar)\xi_2(u-\frac{3\hbar}{2})}\right) \\
+        &= \frac{1}{\xi_2(u-\frac{3\hbar}{2}),}
+    \end{align*}
+    and on the other hand,
+    \begin{align*}
+        \mbraid_2\mbraid_1\mbraid_2(\xi_1(u)) &= \mbraid_2\mbraid_1\left(\xi_1(u)\xi_2(u-\frac{\hbar}{2})\right) \\
+        &= \mbraid_2\left(\xi_2(u-\frac{\hbar}{2})\right) \\
+        &= \frac{1}{\xi_2(u-\frac{3\hbar}{2})}.
+    \end{align*}
+    The action on $\xi_2(u)$ is computed similarly, showing that these operators are the same.
 \end{example}
 
 

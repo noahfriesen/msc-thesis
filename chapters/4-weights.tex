@@ -54,7 +54,9 @@ Define the \emph{degree} of $\lambda(u)\in M$ to be the unique integer $k$ for w
     Suppose $\mu(u)$ has degree $k$, and write $\mu(u)=u^k\dot{\mu}(u)$ where $\dot{\mu}\in 1+u^{-1}\C\db{u^{-1}}$.
     Then the difference equation becomes
     \[\left(1+\hbar\frac{d}{u}\right)^k \frac{\dot{\mu}(u+\hbar d)}{\dot{\mu}(u)} = \lambda(u).\]
-    Taking the formal logarithm of both sides, we obtain
+    Since all series involved have constant coefficient $1$, we may make use of the formal series logarithm, which is defined for a series $f$ in $u^{-1}$ as follows:
+    \[\log(f(u)) := \sum_{n\geq 1}\frac{(-1)^{n+1}}{n}(f(u)-1)^n.\]
+    Taking the logarithm of both sides of our difference equation above, we obtain
     \[k\log(1+\hbar\frac{d}{u}) + b(u+\hbar d) - b(u) = \log(\lambda(u)),\]
     where
     \[b(u) = \sum_{r\geq 0}b_ru^{-r-1} := \log(\dot{\mu}(u)).\]
