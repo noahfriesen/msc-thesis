@@ -21,7 +21,7 @@ This algebra is a type of affine quantum group, and is a deformation of the univ
 Yangians originally arose in the theory of integrable systems, and their representation theory has been studied by many since the seminal paper \cite{drinfeld_hopf_1985} of the Fields medalist V. Drinfeld.
 They also have many applications to the areas of geometry and mathematical physics, and their name honours physicist C. N. Yang.
 
-In Chapter \ref{chap:yangians}, after recalling some basic structure and representation theory of $\g$, we give a presentation for the Yangian known as Drinfeld's new presentation.
+In Chapter \ref{chap:yangians}, after reviewing some basic structure and representation theory of $\g$, we recall a presentation for the Yangian known as \emph{Drinfeld's new presentation}.
 The generators and relations therein are very reminiscent of the Chevalley--Serre presentation of $\g$ itself.
 Indeed, using this presentation it is easy to see that there is a natural inclusion of $\g$ and its enveloping algebra into $\Yhg$ given by sending the generators of the former to the degree-zero generators of the latter.
 Because of this inclusion, we get an adjoint action of $\g$ on $\Yhg$ which is integrable, and so there is an action of the braid group $\Bg$ on $\Yhg$.
@@ -30,7 +30,8 @@ Also note that because of this, we may regard any representation of $\Yhg$ as a 
 
 In a later section of Chapter \ref{chap:yangians}, we introduce an alternative set of generating series for the Yangian given by Gerasimov et al. in \cite{gerasimov_class_2005}.
 These generating series play a crucial role in our results, as they allow us to compute explicit formulas for the action of the braid group $\Bg$ on the Yangian $\Yhg$.
-We are then able to compute formulas for our modified braid group action described in the section below, and ultimately use these formulas to find a new factorization of the so-called Baxter polynomials which gives us our main result.
+We are then able to compute formulas for our modified braid group action described in the section below, and ultimately use these formulas to find a new factorization of the so-called Baxter polynomials, giving us our main results.
+To preface, many of the results in this thesis come from joint work with A. Weekes and C. Wendlandt \cite{friesen_braid_2024}, to which I made a substantial contribution.
 
 
 \section{Modified braid group action}
@@ -83,6 +84,12 @@ Packaging these eigenvalues into series as we did for the generators themselves 
 Recall that we can regard $V$ as a representation of $\g$, and doing so we define the extremal vectors of $V$ to be those of $\g$-weight $w(\lambda)$ for $w\in\Wg$, where $\lambda$ is the $\g$-weight of the highest weight vector $v$.
 Note that because of the aforementioned dimension-preserving property of the braid group action on weight spaces, each extremal weight space is one-dimensional.
 The main result of this section tells us that the eigenvalue of the generating series $\xi_i(u)$ (i.e., the $\Yhg$-weight) on the extremal vector of $\g$-weight $w(\lambda)$ is given by the dual action on the $\Yhg$-highest weight. This eigenvalue is $\braid_w(\ul)_i$, where $\braid_w\in\Bg$ is defined by taking any reduced expression for $w\in\Wg$ and replacing each Weyl group generator with its corresponding braid group generator, and the subscript $i$ denotes taking the $i$th component of the tuple.
+
+Something to note (and that is explained in detail in \cite[\S 6]{friesen_braid_2024}) is that the results of this section also apply to the parallel case of the quantum loop algebra $\UqLg$.
+In this setting, there is an action of $\Bg$ on $\UqLg$ via operators given in \cite{lusztig_introduction_2010} by G. Lusztig, and we can modify these operators as above to obtain an action on a commutative subalgebra $\UqLg[0]$.
+Dualizing this modified action, we recover an action of $\Bg$ studied by Chari in \cite{chari_braid_2002}.
+We can then prove the analogue of Theorem \ref{T:intro-main1} in this setting, and further we can show that this modified action is compatible with the homomorphism from $\UqLg$ to a completion of $\Yhg$ that was given in \cite{gautam_yangians_2013}.
+By this, we mean that modifying the action on $\UqLg$ then applying the homomorphism gives us the same action on $\Yhg$ that we obtain by modifying the action on $\Yhg$.
 
 
 \section{Baxter polynomials and cyclicity}
