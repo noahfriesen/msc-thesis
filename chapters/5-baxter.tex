@@ -77,10 +77,17 @@ It gives a factorization of the Baxter polynomial $\baxterP(u)$ in terms of the 
 \section{Cyclicity criteria for tensor products}
 
 An important property of the poles of representations of $\Yhg$ is that they encode information about when the tensor product of two irreducible representations is cyclic or irreducible.
-By \cite[Thm. 7.2]{gautam_poles_2023}, the representation $L(\uP)\otimes L(\uQ)$ is cyclic if for all $i\in\I$, none of the zeros of $Q_i(u+\hbar d_i)$ are poles of $L(\uP)$, i.e., if
+By \cite[Thm. 7.2]{gautam_poles_2023}, the representation $L(\uP)\otimes L(\uQ)$ is cyclic if for all $i\in\I$, none of the zeros of $Q_i(u+\hbar d_i)$ are $i$th poles of $L(\uP)$, i.e., if
 \[\zeros(Q_i(u+\hbar d_i)) \subset \C\setminus\sigma_i(L(\uP)).\]
-By \cite[Cor. 7.3]{gautam_poles_2023}, $L(\uP)\otimes L(\uQ)$ is irreducible if in addition to the above condition, none of the zeros of $P_i(u+\hbar d_i)$ are poles of $L(\uQ)$:
+By \cite[Cor. 7.3]{gautam_poles_2023}, $L(\uP)\otimes L(\uQ)$ is irreducible if in addition to the above condition, none of the zeros of $P_i(u+\hbar d_i)$ are $i$th poles of $L(\uQ)$:
 \[\zeros(P_i(u+\hbar d_i)) \subset \C\setminus\sigma_i(L(\uQ)).\]
+
+\begin{example}\label{E:cyclicity}
+    Consider the fundamental representations $V = L_{\fund_1}(a)$ and $W = L_{\fund_1}$ of $Y_\hbar(\mfsl_2)$, which we defined in Example \ref{E:dual-braid-sl3}.
+    These representations have Drinfeld polynomials $P_1(u) = u-a$ and $Q_1(u) = u$, respectively.
+    The longest element of the Weyl group is the simple reflection $s_1$, so using the formula of Theorem \ref{T:baxter}, we see that the Baxter polynomials associated to the lowest weights of these representations are just the Drinfeld polynomials: $\baxter_{1,V}^{\mfsl_2}(u) = u-a$ and $\baxter_{1,W}^{\mfsl_2} = u$.
+    Looking at the zeros of these polynomials, the condition above for $V\otimes W$ to be cyclic is equivalent to $a\neq -\hbar$, and the additional condition for $V\otimes W$ to be irreducible is equivalent to $a\neq\hbar$.
+\end{example}
 
 Another sufficient condition for the cyclicity of a tensor product of irreducible representations was given in \cite[Thm. 4.8]{tan_braid_2015} using the action of the braid group on $(\C(u)^\times)^\I$, following \cite{chari_braid_2002}.
 Let $w_0 = s_{j_1}s_{j_2}\cdots s_{j_p}$ be a reduced expression for the longest element $w_0\in\Wg$, and set $w_r := s_{j_{r+1}}\cdots s_{j_p}$ for each $1\leq r\leq p$ as in the previous section.
@@ -109,3 +116,79 @@ The following corollary summarizes this result.
     \end{enumerate}
     If either of these conditions hold, then the representation $L(\uP)\otimes L(\uQ)$ is cyclic.
 \end{corollary}
+
+
+\section{Fundamental representations of \texorpdfstring{$Y_\hbar(\mfsl_n$)}{Y(sln)}}
+
+In this section we will expand upon Example \ref{E:cyclicity} of the previous section and explicitly compute Baxter polynomials associated to the lowest weights of fundamental representations in the case where $\g=\mfsl_n$.
+
+For convenience, let $\baxter_{ij}(u)$ denote the $i$th Baxter polynomial for the $j$th fundamental representation: $\baxter_{i,L_{\fund_j}}^{\mfsl_n}(u)$.
+As in \cite[\S 6]{chari_braid_2002}, if we let $\gamma_k := s_1s_2\cdots s_k\in\Wg$, then a reduced expression for the longest element is given by $w_0 = \gamma_{n-1}\gamma_{n-2}\cdots\gamma_1$.
+Recall from Example \ref{E:dual-braid-sl3} that there is an automorphism of the Dynkin diagram induced by the action of $w_0$ on the simple roots; in this case, one can show that this automorphism is given by $i\mapsto n-i$.
+From this it follows that $\baxter_{ij}(u) = \baxter_{n-i,n-j}(u)$, meaning that in order to compute all of the Baxter polynomials, we need only compute $\baxter_{ij}(u)$ where $i\geq j$.
+Alternatively, this means we need only compute $\baxter_{ij}(u)$ where $j\leq\lceil n/2 \rceil$ since the Baxter polynomials for the $j$th fundamental representation are the same as those of the $(n-j)$th fundamental representation in reverse order.
+Either way, making use of the diagram automorphism halves the amount of computation required.
+
+To illustrate the computation of Baxter polynomials using the braid group action, we will consider the particular example of the second fundamental representation of $Y_\hbar(\mfsl_5)$.
+This representation has Drinfeld polynomials $\uP = (1, u, 1, 1)$, and the reduced expression for the longest element of the Weyl group described above is
+\[w_0 = \gamma_4\gamma_3\gamma_2\gamma_1 = s_1s_2s_3s_4s_1s_2s_3s_1s_2s_1.\]
+Recall that the Cartan matrix for $\mfsl_n$ is given by
+\[a_{ij} =
+\begin{cases}
+    2 & \text{if } i=j \\
+    -1 & \text{if } \abs{i-j}=1 \\
+    0 & \text{otherwise}
+\end{cases}\]
+and so the relevant formulas for the action of the braid group on $\uP$ are as follows:
+\[\braid_i(\uP)_j =
+\begin{cases}
+    P_j(u-\hbar)^{-1} & \text{if } i=j \\
+    P_j(u)P_i(u-\frac{\hbar}{2}) & \text{if } \abs{i-j}=1 \\
+    P_j(u) & \text{otherwise}
+\end{cases}\]
+Now that we have this data, the formula of Theorem \ref{T:baxter} tells us that we can compute the Baxter polynomials for this representation by applying $\braid_{w_0}$ to $\uP$ one $\braid_i$ at a time, then picking out certain polynomials that we obtain along the way.
+The table below shows the process of applying $\braid_{w_0}$ to $\uP$: each row represents one step, where the leftmost column gives the index of the braid group operator $\braid_i$ to be applied to the tuple of polynomials given in the remaining columns.
+\[\begin{array}{c|cccc}
+    \hphantom{m}i\hphantom{m} & P_1 & P_2 & P_3 & P_4 \\
+    \hline
+    1 & 1 & u & 1 & 1 \\
+    2 & 1 & u & 1 & 1 \\
+    1 & u-\frac{\hbar}{2} & (u-\hbar)^{-1} & u-\frac{\hbar}{2} & 1 \\
+    3 & (u-\frac{3\hbar}{2})^{-1} & 1 & u-\frac{\hbar}{2} & 1 \\
+    2 & (u-\frac{3\hbar}{2})^{-1} & u-\hbar & (u-\frac{3\hbar}{2})^{-1} & u-\hbar \\
+    1 & 1 & (u-2\hbar)^{-1} & 1 & u-\hbar \\
+    4 & 1 & (u-2\hbar)^{-1} & 1 & u-\hbar \\
+    3 & 1 & (u-2\hbar)^{-1} & u-\frac{3\hbar}{2} & (u-2\hbar)^{-1} \\
+    2 & 1 & 1 & (u-\frac{5\hbar}{2}) & 1 \\
+    1 & 1 & 1 & (u-\frac{5\hbar}{2}) & 1 \\
+    & 1 & 1 & (u-\frac{5\hbar}{2}) & 1
+\end{array}\]
+Then using the formula for the Baxter polynomials, we construct $\baxter_{ij}(u)$ by taking the product of the polynomials in the column labeled $P_i$ for each row with $i$ in the leftmost column.
+Doing so for each $i$, we obtain:
+\[\baxter_{12}(u) = u-\frac{\hbar}{2}, \qquad
+\baxter_{22}(u) = u(u-\hbar), \qquad
+\baxter_{32}(u) = (u-\frac{\hbar}{2})(u-\frac{3\hbar}{2}), \qquad
+\baxter_{42}(u) = u-\hbar.\]
+By the discussion at the beginning of this section, this also gives us the Baxter polynomials for the third fundamental representation of $Y_\hbar(\mfsl_5)$:
+\[\baxter_{12} = \baxter_{43}, \qquad
+\baxter_{22} = \baxter_{33}, \qquad
+\baxter_{32} = \baxter_{23}, \qquad
+\baxter_{42} = \baxter_{13}.\]
+
+Something to note is that in our choice of reduced expression for $w_0$, the simple reflection $s_i$ occurs $n-i$ times for each $1\leq i\leq n-1$.
+This number of occurrences is the number of factors in our formula for $Q_{ij}(u)$, but some of these factors may be $1$, so in particular this means that $Q_{ij}(u)$ has degree at most $n-i$.
+
+Another interesting property of this choice of reduced expression for $w_0$ of $\mfsl_n$ is that it contains reduced expressions for $w_0$ of $\mfsl_m$ for all $m\leq n$: removing $\gamma_{n-1}$ from the left gives us $w_0=\gamma_{n-2}\cdots\gamma_1$ for $\mfsl_{n-1}$, and so on.
+Because of the way we construct the Baxter polynomials using our formula as above, this means that the computation for the $j$th fundamental representation of $Y_\hbar(\mfsl_n)$ also encodes the computation for the $j$th fundamental representation of $Y_\hbar(\mfsl_m)$ with $m\leq n$, as long as $j<m$.
+For example, we may obtain the Baxter polynomials for the second fundamental representation of $Y_\hbar(\mfsl_4)$ using the above table by considering only the rows before the first occurrence of $4$ in the leftmost column, and only the first three components of the tuple of polynomials:
+\[\baxter_{12}(u) = u-\frac{\hbar}{2}, \qquad
+\baxter_{22}(u) = u(u-\hbar), \qquad
+\baxter_{32}(u) = u-\frac{\hbar}{2}.\]
+Note that this time we do not get the Baxter polynomials for another fundamental representation, since the diagram automorphism for $\mfsl_4$ maps $2$ to $2$.
+It follows from this discussion that  $\baxter_{ij}^{\mfsl_m}(u)$ divides $\baxter_{ij}^{\mfsl_n}(u)$ for all $m\leq n$.
+
+Lastly, we note that there is another explicit formula for $\baxter_{ij}(u)$ in the case where $\g=\mfsl_n$ given in \cite[Cor. 5.5]{gautam_poles_2023}:
+\[\baxter_{ij}(u) = \prod_{b\in\mathbf{J}_{ij}}\left(u-\hbar\left(\frac{i+j}{2}-b\right)\right),\]
+where $\mathbf{J}_{ij}$ denotes the $\Z$-valued interval
+\[\mathbf{J}_{ij} = [i+j+1-n, i] \cap [1, j].\]
+This formula explains why in the above examples (and indeed in all cases), the roots of $\baxter_{ij}(u)$ differ by a factor of $\hbar$.

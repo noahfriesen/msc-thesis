@@ -206,6 +206,17 @@ Using the defining relation of the generating series $A_j(u)$, along with the fa
     \[\mbraid_i(\xi_j(u)) = \xi_j(u)\prod_{k=0}^{\abs{a_{ij}}-1} \xi_i\left(u-\frac{\hbar d_i}{2}(\abs{a_{ij}}-2k)\right)^{(-1)^{\delta_{ij}}}.\]
 \end{corollary}
 
+The formula of the above corollary simplifies to the following cases based on the Cartan matrix:
+\[\begin{array}{c|l}
+    a_{ij}a_{ji} & \mbraid_i(\xi_j(u)) \\
+    \hline
+    0 & \xi_j(u) \\
+    1 & \xi_j(u)\xi_i(u-\frac{\hbar}{2}) \\
+    2 & \xi_j(u)\xi_i(u)\xi_i(u-\hbar) \\
+    3 & \xi_j(u)\xi_i(u+\frac{\hbar}{2})\xi_i(u-\frac{\hbar}{2})\xi_i(u-\frac{3\hbar}{2}) \\
+    4 & \xi_j(u-\hbar)^{-1}
+\end{array}\]
+and we note that the last case occurs when $i=j$.
 Finally, we give an example to illustrate these explicit formulas more concretely.
 
 \begin{example}\label{E:sl3-mbraid-action}
