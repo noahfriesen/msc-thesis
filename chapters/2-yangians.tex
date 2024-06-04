@@ -1,15 +1,17 @@
-\chapter{Yangians}
+\chapter{Yangians}\label{chap:yangians}
 
 \section{Simple Lie algebras}
 
-\subsection{Structure}
-
-To begin, we will review some basic structure and representation theory of a simple Lie algebra, following \cite{humphreys_introduction_1972}.
+To begin, we will review some basic structure and representation theory of simple Lie algebras, following \cite{humphreys_introduction_1972}.
 This will allow us to more easily see the many similarities that arise in the Yangian setting, detailed in the next section.
+
+
+\subsection{Structure}
 
 Let $\g$ be a finite-dimensional simple Lie algebra over $\C$, with Cartan matrix $(a_{ij})_{i,j\in\I}$.
 Fix minimal symmetrizing integers $d_i\in\{1,2,3\}$ so that $d_ia_{ij}=d_ja_{ji}$.
 Let $\{\alpha_i\}_{i\in\I}$ be a basis of simple roots relative to a Cartan subalgebra $\h\subset\g$, and define a nondegenerate symmetric bilinear form on $\h^{*}$ by $(\alpha_i,\alpha_j)=d_ia_{ij}$.
+Also note that in all that follows, we shall use $\N$ to denote the nonnegative integers, namely including zero.
 
 The following theorem gives a presentation of $\g$ in terms of so-called \emph{Chevalley--Serre} generators and relations.
 Note that $\delta_{ij}$ denotes the Kronecker delta function, which is $1$ if $i=j$ and $0$ otherwise, and $\ad:\g\to\End(\g)$ is defined by $\ad(x)(y)=[x,y]$ for $x,y\in\g$.
