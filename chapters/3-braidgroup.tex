@@ -6,7 +6,7 @@ In this section, we review the action of the braid group of a simple Lie algebra
 
 The \emph{braid group} of $\g$, denoted $\Bg$, is the group with generators $\braid_i$ for $i\in\I$ subject to the following defining relations, called the \emph{braid relations}: for all $i,j\in\I$ with $i\neq j$, we have
 \[\underbrace{\braid_i\braid_j\braid_i\cdots}_{m_{ij}\text{ factors}} = \underbrace{\braid_j\braid_i\braid_j\cdots}_{m_{ij}\text{ factors}}\]
-where the number of factors $m_{ij}=m_{ji}$ on each side of the above equality is defined according to the entries of the Cartan matrix:
+where the number of factors $m_{ij}=m_{ji}$ on each side of the above equality is defined according to the entries of the Cartan matrix of $\g$:
 \[\begin{array}{c|cccc}
     a_{ij}a_{ji} & 0 & 1 & 2 & 3 \\
     \hline
@@ -32,7 +32,6 @@ Given such a representation $(V,\phi)$, we can define the following operators fo
 \[\braid_i^V := \exp(\phi(e_i))\exp(\phi(-f_i))\exp(\phi(e_i)).\]
 Since $\phi(e_i)$ and $\phi(-f_i)$ are locally nilpotent endomorphisms of $V$, it follows by the argument in \cite[\S21.2]{humphreys_introduction_1972} that each $\braid_i^V$ is an automorphism of $V$.
 One can check that these operators satisfy the braid relations, so the assignment $\braid_i\mapsto\braid_i^V$ gives us an action of the braid group on $V$.
-% TODO: prove this, or give an example (maybe adjoint rep of sl3)
 
 Recall that there is an action of the Weyl group on $\h^*$ given by
 \[s_i(\alpha_j) = \alpha_j - a_{ij}\alpha_i\]
@@ -46,7 +45,7 @@ The following proposition shows that the braid group action on $V$ intertwines t
     We use the argument shown in \cite[\S1.3]{kumar_kac-moody_2002}.
     Fix $v\in V_\mu$, then for any $h\in\h$ such that $\alpha_i(h)=0$, we have
     \[h\cdot \braid_i^V(v) = \mu(h)\braid_i^V(v).\]
-    By the Serre relations and some properties of nilpotent derivations (namely using the Leibniz rule), we have
+    By the Chevalley--Serre relations and some properties of nilpotent derivations (namely using the Leibniz rule), we have
     \[(\braid_i^V)^{-1}\phi(h_i)\braid_i^V = -\phi(h_i)\]
     as endomorphisms of $V$.
     From this, it follows that
@@ -69,8 +68,8 @@ The following proposition shows another important property of these braid group 
     \[\phi(x) = \phi_V(x)\otimes{\id} + {\id}\otimes\phi_W(x).\]
     Notice that the two terms of the right-hand side of the above equation commute, since
     \[(\phi_V(x)\otimes{\id})(\id\otimes\phi_W(x)) = ({\id}\otimes\phi_W(x))(\phi_V(x)\otimes{\id}) = \phi_V(x)\otimes\phi_W(x).\]
-    So we can take advantage of the fact that $\exp(A+B)=\exp(A)\exp(B)$ for any two commuting operators $A$ and $B$.
-    Also using the fact that $\exp(A\otimes{\id})=\exp(A)\otimes{\id}$ for any operator $A$, we have:
+    This means that we can take advantage of the fact that $\exp(A+B)=\exp(A)\exp(B)$ for any two commuting operators $A$ and $B$.
+    Also using the fact that $\exp(A\otimes{\id})=\exp(A)\otimes{\id}$ for any operator $A$ (and similarly for case where ${\id}$ is instead in the left tensor leg), we have:
     \begin{align*}
         \exp(\phi(x)) &= \exp(\phi_V(x)\otimes{\id}+{\id}\otimes\phi_W(x)) \\
         &= \exp(\phi_V(x)\otimes{\id})\exp({\id}\otimes\phi_W(x)) \\
@@ -114,7 +113,7 @@ For simplicity, we will denote by $\braid_i$ the algebra automorphisms $\braid_i
     Let $\Yhg_0$ be the zero weight space of $\Yhg$ as a representation of $\g$.
     Elements of $\Yhg$ belong to this weight space, but so do elements of with the same number of raising and lowering operators such as $x^-_{i,r}\xi_{i,r}x^+_{i,r}$, which means that $\Yhg[0]\subset\Yhg_0$.
     By Proposition \ref{P:tau-wt-space}, this means that $\braid_i$ maps $\Yhg[0]$ into $\Yhg_0$.
-    Next, $\varepsilon^+$ maps monomials with operators to zero, so it maps $\Yhg_0$ into $\Yhg[0]$ and hence $\mbraid_i:\Yhg[0]\to\Yhg[0]$.
+    Next, $\varepsilon^+$ maps monomials with raising operators to zero, so it maps $\Yhg_0$ into $\Yhg[0]$ and hence $\mbraid_i:\Yhg[0]\to\Yhg[0]$.
 
     For all $a\in\Yhg[0]$, let
     \[\braid_i(a) = a_0+a_+\]
@@ -130,7 +129,7 @@ For simplicity, we will denote by $\braid_i$ the algebra automorphisms $\braid_i
     Expanding, we have
     \[x^+_{j,s}\xi_{i,r+1}=\xi_{i,r+1}x^+_{j,s} -\xi_{i,r}x^+_{j,s+1} -\hbar\frac{d_ia_{ij}}{2}\xi_{i,r}x^+_{j,s} +x^+_{j,s+1}\xi_{i,r} -\hbar\frac{d_ia_{ij}}{2}x^+_{j,s}\xi_{i,r}.\]
     The first three terms of the right-hand side above are in $\Yhg[0]\otimes\Yhg[+]$, and the other two terms are still in $\Yhg[+]\otimes\Yhg[0]$ but have a lower subscript $r$, which means that we can repeatedly apply this relation to these terms and this process will terminate.
-    Thus all but the first term of the right-hand side of equation (\ref{eqn:TaTb}) will be mapped to zero by $\varepsilon^+$, so we have
+    Thus all but the first term of the right-hand side of (\ref{eqn:TaTb}) will be mapped to zero by $\varepsilon^+$, so we have
     \[\mbraid_i(ab) = \varepsilon^+(\braid_i(ab)) = \varepsilon^+(\braid_i(a)\braid_i(b)) = a_0b_0 = \mbraid_i(a)\mbraid_i(b)\]
     which completes the proof.
 \end{proof}
@@ -139,7 +138,7 @@ Notice that by a similar argument as in the proof above, we would obtain the sam
 In other words, we obtain the same operators if we replace $\varepsilon^+$ in Definition \ref{D:mbraid} with $\varepsilon^- := \varepsilon\otimes{\id}\otimes{\id}$, or even with $\varepsilon\otimes{\id}\otimes\varepsilon$.
 To make this more precise, considering the subsets
 \[N^\pm := \{x^\pm_{i,r} : i\in\I, r\in\N\},\]
-we have that $\Yhg N^\pm$ are left ideals and $N^\pm \Yhg$ are right ideals, and it follows from the PBW theorem that
+we have that $\Yhg N^\pm$ and $N^\pm \Yhg$ are left and right ideals of $\Yhg$, respectively, and it follows from the PBW theorem that
 \[\Yhg = \Yhg[0] \oplus (N^-\Yhg + \Yhg N^+).\]
 Let $\Pi:\Yhg\to\Yhg[0]$ be the projection onto $\Yhg[0]$ in the direct sum above, then if $\beta$ is any nonzero weight of $\Yhg$ as a representation of $\g$, the corresponding weight space $\Yhg_\beta$ is in the kernel of $\Pi$.
 The restriction of $\Pi$ to the zero weight space $\Yhg_0$ is the projection in the following direct sum:
@@ -170,7 +169,7 @@ The results of this section are summarized in the following theorem.
 In this section, we will compute the action of the modified braid group operators $\mbraid_i$ on $\Yhg[0]$ explicitly, using the generating series $(A_j(u))_{j\in\I}$ from \cite{gerasimov_class_2005}.
 For the definition of these series and the other series used below, see Section \ref{ssec:alt-gen}.
 The following proposition gives us explicit formulas for both the regular and modified braid group actions.
-As a remark, the first equation of the following proposition was established for simply laced (i.e., type A, D, and E) Lie algebras in \cite[Lem. 5.3.16]{weekes_highest_2016}.
+As a remark, the first equation of the following proposition was established for simply laced (i.e., type A, D, and E) Lie algebras in \cite[Lemma 5.3.16]{weekes_highest_2016}.
 
 \begin{proposition}\label{P:tau-a}
     For all $i,j\in\I$, we have
@@ -246,7 +245,7 @@ Finally, we give an example to illustrate these explicit formulas more concretel
 
 \section{Action on the universal \texorpdfstring{$R$}{R}-matrix}
 
-In this section, we show how the braid group operators and their modified versions interact with the universal $R$-matrix of the Yangian introduced in Section \ref{ssec:Y-Hopf}.
+In this section, we briefly show how the braid group operators and their modified versions interact with the universal $R$-matrix of the Yangian introduced in Section \ref{ssec:Y-Hopf}.
 
 Recall the shift homomorphism $\tau_z:\Yhg\inj\Yhg[][z]$ used in the definition of the universal $R$-matrix.
 Since this map restricts to the identity map on $\Ug$, by the intertwiner equation (\ref{eqn:R-intertwiner}) and the coproduct formula given in Section \ref{ssec:Y-Hopf}, for all $x\in\g$ we have:
