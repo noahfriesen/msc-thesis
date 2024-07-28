@@ -641,6 +641,8 @@ Unless otherwise noted, copyright of the material in this thesis belongs to the 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\abstract}[1]{\gdef\@abstract{#1}}
 \abstract{}
+\newcommand{\declaration}[1]{\gdef\@declaration{#1}}
+\declaration{}
 \newcommand{\acknowledgements}[1]{\gdef\@acknowledgements{#1}}
 \acknowledgements{}
 \newcommand{\dedication}[1]{\gdef\@dedication{#1}}
@@ -726,6 +728,19 @@ Saskatoon, Saskatchewan S7N 5C9 Canada
 %\strut\\
 \@abstract
 \newpage
+
+%DECLARATION (if any)
+\ifx \@declaration \@empty
+\relax
+\else
+        \ifx\proposal\undefined
+        \phantomsection
+        \addcontentsline{toc}{chapter}{Declaration}
+        \chapter*{Declaration}
+        \@declaration
+        \newpage
+        \fi
+\fi
 
 %ACKNOWLEDGEMENTS (if any)
 \ifx \@acknowledgements \@empty
