@@ -18,6 +18,11 @@ Then by \cite[Thm. 4.4]{gautam_poles_2023} (see also \cite[Cor. 4.7]{gautam_pole
 We note that $T_i(u)$ can be recovered as $\lambda_i^T(u)^{-1}\mathscr{T}_i(u)$, where $\mathscr{T}_i(u)$ is the \emph{$i$th abelianized transfer operator} introduced in \cite[\S 4.3]{gautam_poles_2023} and $\lambda_i^T(u)$ is the eigenvalue of $\mathscr{T}_i(u)$ on the highest weight space; see \cite[Remark 5.1]{friesen_braid_2024} for details.
 The eigenvalues of the operator $T_i(u)$ are called the \emph{(specialized) Baxter polynomials} associated to $V$, and were first introduced in generality in \cite{frenkel_baxters_2015}.
 
+\begin{remark}
+    The fact that the eigenvalues of $T_i(u)$ are polynomials---as opposed to some formal Laurent series---is surprising, given that the transfer operator $\mathscr{T}_i(u)$ is defined as one of the solutions to a certain difference equation, and is expressible in terms of Euler's gamma function \cite[\S 4.3]{gautam_poles_2023}.
+    The proof of this polynomiality property is not obvious; see \cite[Thm. 4.4]{gautam_poles_2023} and \cite[Thm. 5.9]{frenkel_baxters_2015}.
+\end{remark}
+
 The generating series $\xi_i(u)$ and $x^\pm_i(u)$ of $\Yhg$ introduced in Section \ref{ssec:Y-Hopf} operate on $V$ as the expansions at infinity of $\End(V)$-valued rational functions of $u$; see \cite[Prop. 3.6]{gautam_yangians_2016}.
 We define the \emph{$i$th set of poles} of $V$ to be the joint set of poles of these operators:
 \[\sigma_i(V) := \{\text{Poles of } \xi_i(u)\big|_V,\ x^\pm_i(u)\big|_V \in\End(V)(u)\} \subset\C.\]
@@ -125,7 +130,9 @@ In this section we will expand upon Example \ref{E:cyclicity} of the previous se
 For convenience, let $\baxter_{ij}(u)$ denote the $i$th Baxter polynomial for the $j$th fundamental representation: $\baxter_{i,L_{\fund_j}}^{\mfsl_n}(u)$.
 As in \cite[\S 6]{chari_braid_2002}, if we let $\gamma_k := s_1s_2\cdots s_k\in\Wg$, then a reduced expression for the longest element is given by $w_0 = \gamma_{n-1}\gamma_{n-2}\cdots\gamma_1$.
 Recall from Example \ref{E:dual-braid-sl3} that there is an automorphism of the Dynkin diagram induced by the action of $w_0$ on the simple roots; in this case, one can show that this automorphism is given by $i\mapsto n-i$.
-From this it follows that $\baxter_{ij}(u) = \baxter_{n-i,n-j}(u)$, meaning that in order to compute all of the Baxter polynomials, we need only compute $\baxter_{ij}(u)$ where $i\geq j$.
+From this it follows that
+\[\baxter_{ij}(u) = \baxter_{n-i,n-j}(u),\]
+meaning that in order to compute all of the Baxter polynomials, we need only compute $\baxter_{ij}(u)$ where $i\geq j$.
 Alternatively, this means we need only compute $\baxter_{ij}(u)$ where $j\leq\lceil n/2 \rceil$ since the Baxter polynomials for the $j$th fundamental representation are the same as those of the $(n-j)$th fundamental representation in reverse order.
 Either way, making use of the diagram automorphism halves the amount of computation required.
 
