@@ -31,8 +31,9 @@ The following proposition gives a formula for the action of $\Bg$ on this group.
     Then using the formula for $\mbraid_j(\xi_i(u))$ given in Corollary \ref{C:tau-xi}, we see that the claimed formula holds.
 \end{proof}
 
-The formula for the action of $\Bg$ on $(1+u^{-1}\C\db{u^{-1}})^\I$ given in the above proposition is the same as the formula for the action of $\Bg$ on the group $(\C(u)^\times)^\I$ of $\I$-tuples of rational functions defined in \cite[Prop. 3.1]{tan_braid_2015}.
-This is why we have used the antiautomorphism $\vartheta$ to define the dual action rather than the usual antiautomorphism $\sigma\mapsto\sigma^{-1}$ of $\Bg$.
+The formula for the action of $\Bg$ on $(1+u^{-1}\C\db{u^{-1}})^\I$ given in the above proposition is the same as the formula for the action of $\Bg$ on the group $(\C(u)^\times)^\I$ of $\I$-tuples of rational functions defined in \cite[Prop. 3.1]{tan_braid_2015}, except that $(a_{ji}, d_j)$ and $(a_{ij}, d_i)$ are interchanged.
+In the next section, we will explain how to recover Tan's action from the one defined above using formal difference equations.
+We also note that this relation to Tan's action is why we have used the antiautomorphism $\vartheta$ to define the dual action rather than the usual antiautomorphism $\sigma\mapsto\sigma^{-1}$ of $\Bg$.
 
 
 \section{Extending the representation space}\label{sec:extending}
@@ -81,10 +82,10 @@ Hence the map $\q^{2D}$ is given by $\lambda_i(u)\mapsto\lambda_i(u+\hbar d_i)$ 
 Also note that for all $\um\in M^\I$, the element $(\q^{2D}\um)\um^{-1}$ belongs to $(1+u^{-1}\C\db{u^{-1}})^\I$, so we may apply our dual braid group action to it.
 
 \begin{proposition}\label{P:Bg-action-M}
-    For all $\sigma\in\Bg$ and $\um = (\mu_i(u))_{i\in\I} \in M^\I$, there exists a unique element $\sigma(\mu)\in M^\I$ satisfying
-    \[\sigma\left(\frac{\q^{2D}\um}{\um}\right) = \frac{\q^{2D}\sigma(\um)}{\sigma(\um)}.\]
-    This defines an action of $\Bg$ on $M^\I$ by group automorphisms for which $1+u^{-1}\C\db{u^{-1}}^\I$ is a subrepresentation and $\deg:M^\I\to\Lambda$ is a module homomorphism:
-    \[\deg\sigma(\um) = \sigma(\deg\um).\]
+    For all $\sigma\in\Bg$ and $\um = (\mu_i(u))_{i\in\I} \in M^\I$, there exists a unique element $\sigma^M(\mu)\in M^\I$ satisfying
+    \[\sigma\left(\frac{\q^{2D}\um}{\um}\right) = \frac{\q^{2D}\sigma^M(\um)}{\sigma^M(\um)}.\]
+    The formula $\sigma\cdot\um = \sigma^M(\um)$ defines an action of $\Bg$ on $M^\I$ by group automorphisms for which $\deg:M^\I\to\Lambda$ is a module homomorphism:
+    \[\deg\sigma^M(\um) = \sigma(\deg\um).\]
 \end{proposition}
 \begin{proof}
     Let $\ul = (\lambda_i(u))_{i\in\I}$ denote the element $(\q^{2D}\um)\um^{-1}$, and write $\lambda_i(u) = 1+\hbar\sum_{r\geq 0}\lambda_{i,r}u^{-r-1}$.
@@ -97,22 +98,34 @@ Also note that for all $\um\in M^\I$, the element $(\q^{2D}\um)\um^{-1}$ belongs
     \[\sigma\cdot(\lambda_{i,0})_{i\in\I} = \left(\sum_{j\in\I}d_j^{-1}\lambda_{j,0}(\alpha_i,\sigma(\fund_j))\right)_{i\in\I}\]
     By the previous lemma, we have $\lambda_{j,0} = d_j\deg\mu_j(u)$ for all $j\in\I$, so the above is equal to $(\alpha_i,\sigma(\deg\um))_{i\in\I}$.
     Since the action of $\Bg$ on $\h^*$ preserves $\Lambda$, we have $(\alpha_i,\sigma(\deg\um))\in d_i\Z$ for all $i\in\I$.
-    Thus by the previous lemma, $\sigma(\um)$ exists, is unique, and has degree $\sigma(\deg\um)$.
+    Thus by the previous lemma, $\sigma^M(\um)$ exists, is unique, and has degree $\sigma(\deg\um)$.
 \end{proof}
 
-By considering the unique simply connected Lie group with Lie algebra $\g$, one can show that there is an action of $\Wg$ by group automorphisms on $(\C^\times)^\I$ given explicitly for all $i,j\in\I$ and $\lambda_i\in\C^\times$ by
-\[s_j(\lambda_i)_{i\in\I} = (\lambda_i\lambda_j^{-a_{ji}})_{i\in\I},\]
-hence we get an action of $\Bg$ on this group as well; see \cite[Remark 4.5]{friesen_braid_2024} for details.
-Then using the action given in the above proposition, we have an action of $\Bg$ on the group $(\C^\times)^\I\times M^\I$.
+Since the subgroup $(1+u^{-1}\C\db{u^{-1}})^\I$ of $M^\I$ consists of the elements $\um\in M^\I$ for which $\deg(\um) = 0$, the last part of the above proposition implies that this subgroup is $\Bg$-invariant (i.e., is a subrepresentation of the action on $M^\I$).
+When $\g$ is simply laced, this is the same action as in Proposition \ref{P:Tan-formula}, hence we have $\sigma(\um) = \sigma^M(\um)$.
+However, when $\g$ is not simply laced, this no longer holds in general.
+The following corollary gives an explicit formula for the action on $M^\I$, and follows from a straightforward computation using telescoping products and the fact that $d_ia_{ij} = d_ja_{ji}$; see \cite[Cor. 4.5]{friesen_braid_2024}.
+
+\begin{corollary}\label{C:Langlands}
+    If $\um = (\mu_i(u))_{i\in\I}\in M^\I$, then for all $i,j\in\I$, the $i$th component of $\braid_j^M(\um)$ is given by
+    \[\braid_j^M(\um)_i = \mu_i(u)\prod_{k=0}^{\abs{a_{ij}}-1}\mu_j\left(u-\frac{\hbar d_i}{2}(\abs{a_{ij}}-2k)\right)^{(-1)^{\delta_{ij}}}.\]
+\end{corollary}
+
+Note that the formula above is the same as the one in Proposition \ref{P:Tan-formula}, except that $(a_{ji}, d_j)$ and $(a_{ij}, d_i)$ are interchanged (cf. the end of the previous section).
+By considering the Langlands dual Lie algebra of $\g$ and its corresponding algebraic group of adjoint type, one can show that there is an action of $\Wg$ by group automorphisms on $(\C^\times)^\I$ given explicitly for all $i,j\in\I$ and $\lambda_i\in\C^\times$ by
+\[s_j(\lambda_i)_{i\in\I} = (\lambda_i\lambda_j^{-a_{ij}})_{i\in\I},\]
+hence we get an action of $\Bg$ on this group as well; see \cite[Remark 4.6]{friesen_braid_2024} for details.
+Then using the action on $M^\I$ obtained above, we have an action of $\Bg$ on the group $(\C^\times)^\I\times M^\I$.
 There is an isomorphism from this group to $(\C\dparen{u^{-1}}^\times)^\I$ given by component-wise multiplication:
 \[((\lambda_i)_{i\in\I}, (\mu_i(u))_{i\in\I}) \mapsto (\lambda_i\mu_i(u))_{i\in\I},\]
-hence $\Bg$ acts on $(\C\dparen{u^{-1}}^\times)^\I$ by group automorphisms via the formulas of Proposition \ref{P:Tan-formula}.
-The space $(\C(u)^\times)^\I$ is a subrepresentation, so we have successfully extended our dual braid group action so that the underlying space agrees with that of \cite[Prop. 3.1]{tan_braid_2015}.
+hence $\Bg$ acts on $(\C\dparen{u^{-1}}^\times)^\I$ by group automorphisms via the formulas of Corollary \ref{C:Langlands}.
+The space $(\C(u)^\times)^\I$ is a subrepresentation, so we have successfully recovered the braid group action of \cite[Prop. 3.1]{tan_braid_2015} starting from our dual braid group action.
 
 
 \section{Weights of extremal vectors}\label{sec:extremal-weights}
 
 In this section, we will show that the braid group action of the previous section determines the weights of the \emph{extremal vectors} of a representation of the Yangian.
+In all that follows, we shall omit the superscript $M$ and understand that when we apply braid group actions to Drinfeld polynomials, we mean to use the action on $M^\I$ given by the formulas of Corollary \ref{C:Langlands}.
 
 Let $V$ be a finite-dimensional irreducible representation of $\Yhg$ with highest weight $\ul$, and let $\lambda\in\h^*$ be the highest weight of $V$ as a representation of $\g$.
 The \emph{extremal vectors} are those which lie in the Weyl group orbit of the highest weight vector, i.e., they are elements of $V_{w(\lambda)}$ for $w\in\Wg$.
@@ -182,7 +195,7 @@ Lastly, we give an explicit example of the dual braid group action defined in th
     All three of these weights are extremal, since they are equal to $\fund_1$, $s_1(\fund_1)$, and $s_2s_1(\fund_1)$, respectively.
     The last of these three weights is the lowest weight, since it is also equal to $s_1s_2s_1(\fund_1)$ and $w_0 = s_1s_2s_1$ is the longest element of the Weyl group of $\mfsl_3$.
 
-    By Proposition \ref{P:Tan-formula}, we can use the formulas for the modified braid group action we found in Example \ref{E:sl3-mbraid-action} to get the formulas for the dual action on the Drinfeld polynomials.
+    By the discussion above Corollary \ref{C:Langlands}, we can use the formulas for the modified braid group action we found in Example \ref{E:sl3-mbraid-action} to get the formulas for the dual action on the Drinfeld polynomials.
     For $i,j\in\{1,2\}$ with $i\neq j$, we have
     \[\braid_i(P_i(u)) = \frac{1}{P_i(u-\hbar)}, \qquad \braid_i(P_j(u)) = P_j(u)P_i(u-\tfrac{\hbar}{2}).\]
     Now we can use Proposition \ref{P:extremal-weight} to compute the eigenvalues of $\xi_1(u)$ and $\xi_2(u)$ on the lowest weight space $V_{w_0(\fund_1)}$.
