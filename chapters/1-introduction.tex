@@ -1,5 +1,30 @@
 \chapter{Introduction}
 
+\section{Background}
+
+In the 1960s, the \emph{quantum Yang--Baxter equation} was first introduced in the theory of integrable systems.
+The equation emerged from attempts to solve two-dimensional lattice models, in which atoms are arranged in a rectangular grid, and the energy of each atom depends on the bonds joining it to its four neighbouring atoms.
+In such a model, the quantum Yang--Baxter equation provides a condition that guarantees the existence of operators that allow the system to be solved.
+The equation itself is as follows:
+\[\rmat_{12}(u-v)\rmat_{13}(u)\rmat_{23}(v) = \rmat_{23}(v)\rmat_{13}(u)\rmat_{12}(u-v),\]
+where $\rmat$ is a matrix that describes the possible configurations of bonds between atoms, and $u$ and $v$ are external parameters on which the energies of atoms may also depend, such as magnetic fields \cite[\S 7.5]{chari_guide_1995}.
+
+Physicist R. J. Baxter used the quantum Yang--Baxter equation in his famous paper \cite{baxter_partition_1972} to solve a lattice model known as the eight-vertex model.
+It was also in this paper that he first encountered a remarkable class of polynomials now known as \emph{Baxter polynomials}.
+These polynomials encode fundamental information about physical models, and have many applications to areas of mathematics including geometry and representation theory.
+In this thesis, we are concerned with certain Baxter polynomials obtained from mathematical objects called \emph{Yangians}.
+
+In the 1980s, Fields medalist V. Drinfeld introduced Yangians as a uniform context in which to study another special case of the above lattice models.
+In particular, they could be used to generate solutions of the quantum Yang--Baxter equation.
+Many interesting and surprising phenomena appearing in the physical models could also be explained algebraically using the structure of these objects \cite{drinfeld_hopf_1985}.
+Since then, the study of Yangians has become an important topic in both mathematics and physics.
+
+More recently, the representation theory of Yangians has been a rich and active area of research.
+There are various symmetries that occur in this setting, which have been studied previously by V. Chari and Y. Tan.
+From the same data used to construct a Yangian, one may also construct another object called a \emph{braid group}; these symmetries appear in an action of this group on certain functions \cite{chari_braid_2002,tan_braid_2015}.
+This thesis provides a direct algebraic explanation of where these symmetries come from: an action of the braid group on a certain part of the Yangian itself.
+
+
 \section{Braid groups and Yangians}
 
 Given a simple Lie algebra $\g$ over $\C$, we may consider its associated braid group $\Bg$.
@@ -18,7 +43,7 @@ We make use of this property in Chapter \ref{chap:weights} to prove some key lem
 
 For our purposes, the most important integrable representation of $\g$ is an infinite-dimensional Hopf algebra called the \emph{Yangian}, denoted $\Yhg$.
 This algebra is a type of affine quantum group, and is a deformation of the universal enveloping algebra of the current algebra $\g[t]$.
-Yangians originally arose in the theory of integrable systems, and their representation theory has been studied by many since the seminal paper \cite{drinfeld_hopf_1985} of the Fields medalist V. Drinfeld.
+Yangians originally arose in the theory of integrable systems, and their representation theory has been studied by many since the seminal paper \cite{drinfeld_hopf_1985} of V. Drinfeld.
 They also have many applications to the areas of geometry and mathematical physics, and their name honours physicist C. N. Yang.
 
 In Chapter \ref{chap:yangians}, after reviewing some basic structure and representation theory of $\g$, we recall a presentation for the Yangian known as \emph{Drinfeld's new presentation}.
@@ -124,8 +149,6 @@ These polynomials first appeared in generality in the work \cite{frenkel_baxters
 Their name honours physicist R. J. Baxter, who first encountered polynomials of this type in his paper \cite{baxter_partition_1972}.
 The motivation behind Baxter's original work, and much of the literature on Baxter polynomials, is based in mathematical physics, as these polynomials encode information about certain models describing physical phenomena.
 For us, $\baxter_{i,L(\uP)}^\g(u)$ arises as the eigenvalue of a certain \emph{abelian transfer operator} on the lowest weight vector of $L(\uP)$.
-% TODO add sentence about polynomiality of the transfer operator here, something like below:
-% This operator $T_i(u)$ is the solution to a certain difference equation, and is remarkable in that its eigenvalues are polynomials; see Section 5.1.
 In \cite{gautam_poles_2023}, a formula for this polynomial was given in terms of the Drinfeld polynomials $\uP$ and a matrix known as the \emph{quantum Cartan matrix} of $\g$.
 
 In Section \ref{sec:baxter-extremal}, we use the results of Chapters \ref{chap:braidgroup} and \ref{chap:weights} to obtain a factorization of the Baxter polynomials in terms of polynomials arising from the action of the braid group on the Drinfeld polynomials.
