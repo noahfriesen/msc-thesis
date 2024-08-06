@@ -224,10 +224,16 @@ This homomorphism was used by Drinfeld in \cite{drinfeld_hopf_1985} to define th
         (\Delta\otimes{\id})(\rmat(z)) = \rmat_{13}(z)\rmat_{23}(z), \\
         ({\id}\otimes\Delta)(\rmat(z)) = \rmat_{13}(z)\rmat_{12}(z).
     \end{gather*}
-    Moreover, $\rmat(z)^{-1} = \rmat_{21}(-z)$, and for all $a,b\in\C$:
-    \[(\tau_a\otimes\tau_b)\rmat(z) = \rmat(z+a-b).\]
+    Moreover, this element satisfies the \emph{quantum Yang--Baxter equation}:
+    \[\rmat_{12}(u-v)\rmat_{13}(u)\rmat_{23}(v) = \rmat_{23}(v)\rmat_{13}(u)\rmat_{12}(u-v),\]
+    as well as the following relations, for all $a,b\in\C$:
+    \begin{gather*}
+        \rmat(z)^{-1} = \rmat_{21}(-z), \\
+        (\tau_a\otimes\tau_b)\rmat(z) = \rmat(z+a-b).
+    \end{gather*}
 \end{theorem}
 
+Note that the subscripts on $\rmat(z)$ above indicate the two tensor factors on which $\rmat(z)$ acts.
 A proof of the above theorem was recently given in \cite{gautam_meromorphic_2021}, in which the universal $R$-matrix was reconstructed from its \emph{Gauss decomposition}:
 \[\rmat(z) = \rmat^+(z)\rmat^0(z)\rmat^-(z)\]
 where $\rmat^+(z) := \rmat^-_{21}(-z)^{-1}$, and $\rmat^-(z)\in(\Yhg[-]\otimes\Yhg[+])\db{z^{-1}}$ is of the form
